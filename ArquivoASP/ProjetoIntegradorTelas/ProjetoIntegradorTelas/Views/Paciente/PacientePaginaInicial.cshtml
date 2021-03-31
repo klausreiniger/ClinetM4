@@ -1,0 +1,145 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clinet: Paciente - Página inicial</title>
+    <link rel="icon" href="~/images/logo_footer.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Style/principal.css">
+    <link rel="stylesheet" type="text/css" href="~/Style/index.css">
+</head>
+<body>
+
+    <header>
+        <div id="header_superior">
+            <h1>
+                <a href="@Url.Action("PacientePaginaInicial", "Paciente")"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+            </h1>
+
+            <div id="user">
+                <a href="@Url.Action("PacienteDadosPessoais", "Paciente")">
+                    <img src="~/images/user.png" alt="Inscreva-se ou acesse sua conta">
+                </a>
+            </div>
+        </div>
+
+        <nav>
+            <ol>
+                <li><a href="@Url.Action("PacienteMarcacao", "Paciente")"><img src="~/images/marcar.png" width="32" height="32"> Marcação</a></li>
+                <li><a href="@Url.Action("PacienteStatus", "Paciente")"><img src="~/images/status.png" width="32" height="32"> Status da consulta</a></li>
+                <li><a href="@Url.Action("PacienteHistoricoConsultas", "Paciente")"><img src="~/images/historico-medico.png" width="32" height="32"> Histórico de consulta</a></li>
+                <li><a href="@Url.Action("Contato", "Navegacao")"><img src="~/images/contato.png" width="32" height="32"> Contato</a></li>
+            </ol>
+        </nav>
+    </header>
+
+    <main>
+        <section id="horarios2">
+            <div id="title2">
+                <h3>Horários (DD/MM/YYYY)</h3>
+                <form id="box" action="recebedados.html" method="post">
+                    <div>
+                        <input type="checkbox" id="manha" name="manhachoose" value="false">
+                        <label for="manha">Manhã</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="tarde" name="tardechoose" value="false">
+                        <label for="tarde">Tarde</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="boite" name="noitechoose" value="false">
+                        <label for="noite">Noite</label>
+                    </div>
+                </form>
+            </div>
+            <div id="cont2">
+                <div id="card2">
+                    <p>Clínica: Amor e Saúde</p>
+                    <p>Especialidade: Cardiologia</p>
+                    <p>Dr. Thiago Xavier</p>
+                    <p>Hora: 10h30</p>
+                </div>
+                <div id="card2">
+                    <p>Clínica: Amor e Saúde</p>
+                    <p>Especialidade: Cardiologia</p>
+                    <p>Dr. Thiago Xavier</p>
+                    <p>Hora: 10h30</p>
+                </div>
+                <div id="card2">
+                    <p>Clínica: Amor e Saúde</p>
+                    <p>Especialidade: Cardiologia</p>
+                    <p>Dr. Thiago Xavier</p>
+                    <p>Hora: 10h30</p>
+                </div>
+                <div id="card2">
+                    <p>Clínica: Amor e Saúde</p>
+                    <p>Especialidade: Cardiologia</p>
+                    <p>Dr. Thiago Xavier</p>
+                    <p>Hora: 10h30</p>
+                </div>
+            </div>
+        </section>
+        <article class="caixas2">
+            <a href="@Url.Action("PacienteDadosPessoais", "Paciente")">
+                <div class="box">
+                    <img src="~/images/folder.png" alt="ícone de marcação" width="90" height="90">
+                    <p class="sec">Dados pessoais</p>
+                </div>
+            </a>
+
+            <a href="@Url.Action("PacienteMarcacao", "Paciente")">
+                <div class="box">
+                    <img src="~/images/marcar.png" alt="ícone de marcação" width="90" height="90">
+                    <p class="sec">Marcar consulta</p>
+                </div>
+            </a>
+
+            <a href="@Url.Action("PacienteStatus", "Paciente")">
+                <div class="box">
+                    <img src="~/images/status.png" alt="ícone de marcação" width="90" height="90">
+                    <p class="sec">Status da consulta</p>
+                </div>
+            </a>
+
+            <a href="@Url.Action("PacienteHistoricoConsultas", "Paciente")">
+                <div class="box">
+                    <img src="~/images/historico-medico.png" alt="ícone de marcação" width="90" height="90">
+                    <p class="sec">Histórico de consultas</p>
+                </div>
+            </a>
+        </article>
+    </main>
+
+    <footer>
+        <div id="display_footer">
+            <nav id="telefone">
+                <ol>
+                    <li><img src="~/images/telefone.png" alt="telefone" width="32" height="32"> (XX) XXXX-XXXX</li>
+                </ol>
+            </nav>
+
+            <div id="logo_footer">
+                <h1>
+                    <a href="@Url.Action("Index", "Navegacao")"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+                </h1>
+            </div>
+
+            <nav id="redesocial">
+                <ol>
+                    <li><a target="" href="https://pt-br.facebook.com/"><img src="~/images/facebook.png" style="margin-right: -0.5em;" alt="Facebook" width="32" height="32"></a></li>
+                    <!-- BOTEI MARGEM NEGATIVA NO CSS INLINE, PQ O ÍCONE NÃO É PROPORCIONAL AOS OUTROS. -->
+                    <li><a href="https://www.instagram.com/?hl=pt-br"><img src="~/images/instagram.png" alt="Instagram" width="32" height="32"></a></li>
+                    <li><a href="https://twitter.com/login?lang=pt"><img src="~/images/twitter.png" alt="Twitter" width="32" height="32"></a></li>
+                </ol>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

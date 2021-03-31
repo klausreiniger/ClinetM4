@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2? family = Playfair + Display & display = swap');
+
+p{
+	font-size: 2em;
+	padding:20px;
+}
+
+section#flex_clinica{
+	display: inline-flex;
+	margin: 1em 13em;
+}
+
+form#form_filtro{
+	background-color: rgb(255, 165, 0, 80%);
+	display: flex;
+	justify-content: center;
+}
+
+form#form_filtro input{
+	padding: 3% 5%;
+	margin: 1em;
+	border-radius: 15px;
+	width: 251px;
+	height: 42px;
+	border-color: transparent;
+}
+
+div#limpar_filtro, div#filtrar {
+	margin-top: 1.5em;
+	margin-left: 1em;
+}
+
+div#limpar_filtro:hover{
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+div#filtrar:hover{
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+form#form_filtro a{
+	border: 3px solid white;
+	padding: 1em;
+	border-radius: 15px;
+	color: white;
+	text-decoration: none;
+}
+
+form#form_filtro a img{
+	align-items: center;
+	vertical-align: top;
+}
+
+div#clinica_info{
+	margin: 1em;
+	background-color: #2D7992;
+	width: 32em;
+	border-radius: 15px;
+	text-align: center;
+	color: white;
+	height: 22em;
+	font-family: 'Playfair Display', serif;
+	padding-top: 1em;
+}
+
+div#clinica_info h2{
+
+}
+
+img#clinica_foto{
+	margin: 0em 0em 1em 0;
+}
+
+div#clinica_info p{
+	text-align: left;
+	margin-left: 1em;
+}

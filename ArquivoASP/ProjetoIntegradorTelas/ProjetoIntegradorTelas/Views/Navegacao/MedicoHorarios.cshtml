@@ -1,0 +1,204 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" lang="pt-br">
+    <link rel="icon" href="~/images/logo_footer.png">
+    <title>Médico - Horários</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Style/index.css">
+    <link rel="stylesheet" type="text/css" href="~/Style/principal.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="header_superior">
+            <h1>
+                <a href="@Url.Action("MedicoPaginaInicial", "Navegacao")"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+            </h1>
+
+            <div id="form_pesquisa">
+                <form action="@Url.Action("")" method="post">
+                    <input type="text" name="pesquisa">
+                    <a href="@Url.Action("")">
+                        <img src="~/images/lupa.png" width="20" height="20">
+                    </a>
+                </form>
+            </div>
+
+            <div id="user">
+                <a href="@Url.Action("MedicoDadosPessoais", "Navegacao")">
+                    <img src="~/images/user.png" alt="Inscreva-se ou acesse sua conta">
+                </a>
+
+            </div>
+        </div>
+
+        <nav>
+            <ol>
+                <li><a href="@Url.Action("MedicoClinicas", "Navegacao")"><img src="~/images/clinica.png" width="32" height="32"> Clínicas</a></li>
+                <li><a href="@Url.Action("MedicoHorarios", "Navegacao")"><img src="~/images/calendar.png" width="32" height="32"> Horários</a></li>
+                <li><a href="@Url.Action("Contato", "Navegacao")"><img src="~/images/contato.png" width="32" height="32"> Contato</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main>
+        <section id="medcal">
+            <h3>Novembro</h3>
+            <table>
+                <tr>
+                    <th>Dom</th>
+                    <th>Seg</th>
+                    <th>Ter</th>
+                    <th>Qua</th>
+                    <th>Qui</th>
+                    <th>Sex</th>
+                    <th>Sab</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td class="activecell">6</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td>29</td>
+                    <td>30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </section>
+        <section id="horarios3">
+            <div id="title3">
+                <h3>Horários (DD/MM/YYYY)</h3>
+                <form id="box" action="@Url.Action("Index", "Navegacao")" method="post">
+                    <div>
+                        <input type="checkbox" id="manha" name="manhachoose" value="false">
+                        <label for="manha">Manhã</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="tarde" name="tardechoose" value="false">
+                        <label for="tarde">Tarde</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="boite" name="noitechoose" value="false">
+                        <label for="noite">Noite</label>
+                    </div>
+                </form>
+            </div>
+            <div id="cont">
+                <div id="card">
+                    <p>Hora: 08:30</p>
+                    <p>Clínica: CardioMed</p>
+                    <p>Paciente: XXXX XXXX</p>
+                </div>
+                <div id="card">
+                    <p>Hora: 08:30</p>
+                    <p>Clínica: CardioMed</p>
+                    <p>Paciente: XXXX XXXX</p>
+                </div>
+                <div id="card">
+                    <p>Hora: 08:30</p>
+                    <p>Clínica: CardioMed</p>
+                    <p>Paciente: XXXX XXXX</p>
+                </div>
+                <div id="card">
+                    <p>Hora: 08:30</p>
+                    <p>Clínica: CardioMed</p>
+                    <p>Paciente: XXXX XXXX</p>
+                </div>
+                <div id="card">
+                    <p>Hora: 08:30</p>
+                    <p>Clínica: CardioMed</p>
+                    <p>Paciente: XXXX XXXX</p>
+                </div>
+                <div id="card">
+                    <p>Hora: 08:30</p>
+                    <p>Clínica: CardioMed</p>
+                    <p>Paciente: XXXX XXXX</p>
+                </div>
+                <div id="card">
+                    <p>Hora: 08:30</p>
+                    <p>Clínica: CardioMed</p>
+                    <p>Paciente: XXXX XXXX</p>
+                </div>
+                <div id="card">
+                    <p>Hora: 08:30</p>
+                    <p>Clínica: CardioMed</p>
+                    <p>Paciente: XXXX XXXX</p>
+                </div>
+                <div id="card">
+                    <p>Hora: 08:30</p>
+                    <p>Clínica: CardioMed</p>
+                    <p>Paciente: XXXX XXXX</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div id="display_footer">
+            <nav id="telefone">
+                <ol>
+                    <li><img src="~/images/telefone.png" alt="telefone" width="32" height="32"> (XX) XXXX-XXXX</li>
+                </ol>
+            </nav>
+
+            <div id="logo_footer">
+                <h1>
+                    <a href="@Url.Action("Index", "Navegacao")"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+                </h1>
+            </div>
+
+            <nav id="redesocial">
+                <ol>
+                    <li><a target="" href="https://pt-br.facebook.com/"><img src="~/images/facebook.png" style="margin-right: -0.5em;" alt="Facebook" width="32" height="32"></a></li>
+                    <!-- BOTEI MARGEM NEGATIVA NO CSS INLINE, PQ O ÍCONE NÃO É PROPORCIONAL AOS OUTROS. -->
+                    <li><a href="https://www.instagram.com/?hl=pt-br"><img src="~/images/instagram.png" alt="Instagram" width="32" height="32"></a></li>
+                    <li><a href="https://twitter.com/login?lang=pt"><img src="~/images/twitter.png" alt="Twitter" width="32" height="32"></a></li>
+                </ol>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

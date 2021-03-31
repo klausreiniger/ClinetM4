@@ -1,0 +1,162 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clinet: Paciente - Marcar consulta</title>
+    <link rel="icon" href="~/images/logo_footer.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Style/principal.css">
+    <link rel="stylesheet" type="text/css" href="~/Style/index.css">
+</head>
+<body>
+
+    <header>
+        <div id="header_superior">
+            <h1>
+                <a href="@Url.Action("PacientePaginaInicial", "Paciente")"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+            </h1>
+
+
+            <div id="user">
+                <a href="@Url.Action("PacienteDadosPessoais", "Paciente")">
+                    <img src="~/images/user.png" alt="Inscreva-se ou acesse sua conta">
+                </a>
+            </div>
+        </div>
+
+        <nav>
+            <ol>
+                <li><a href="@Url.Action("PacienteMarcacao", "Paciente")"><img src="~/images/marcar.png" width="32" height="32"> Marcação</a></li>
+                <li><a href="@Url.Action("PacienteStatus", "Paciente")"><img src="~/images/status.png" width="32" height="32"> Status da consulta</a></li>
+                <li><a href="@Url.Action("PacienteHistoricoConsultas", "Paciente")"><img src="~/images/historico-medico.png" width="32" height="32"> Histórico de consulta</a></li>
+                <li><a href="@Url.Action("Contato", "Navegacao")"><img src="~/images/contato.png" width="32" height="32"> Contato</a></li>
+            </ol>
+        </nav>
+    </header>
+    <main>
+        <div class="tit">
+            <img src="~/images/numero1.png" width="50" height="50">
+            <h1>Selecionar clínica</h1>
+        </div>
+
+        <section class="marcar">
+            <form id="selectMarcar" autocomplete="off">
+
+                <fieldset id="areaMarcar">
+
+                    <div class="mc">
+                        <label for="name"></label>
+                        <input class="campo_selecionarC1" type="text" id="name" placeholder="Estado">
+
+                        <label for="name"></label>
+                        <input class="campo_selecionarC" type="text" id="name" placeholder="Cidade">
+                    </div>
+
+                    <div class="mc2">
+                        <label for="name">Especialidade:</label>
+                        <select class="listaE" name="especialidade">
+                            <option>Cardiologia</option>
+                            <option>Neurologia</option>
+                            <option>Ortopedia</option>
+                        </select>
+
+                        <label for="name">Clínica:</label>
+                        <select class="listaC" name="clinica">
+                            <option>Amor e Saúde</option>
+                            <option>Amor e Saúde</option>
+                            <option>Amor e Saúde</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+
+        <div class="tit">
+            <img src="~/images/numero2.png" width="50" height="50">
+            <h1>Selecionar médico e horário</h1>
+        </div>
+
+        <section class="marcar2">
+            <form id="selectMarcar" autocomplete="off">
+
+                <fieldset id="areaMarcar">
+
+                    <div class="mc2">
+                        <label for="name">Médico:</label>
+                        <select class="listaE" name="medico">
+                            <option>Maria Luiza</option>
+                            <option>Maria Luiza</option>
+                            <option>Maria Luiza</option>
+                        </select>
+
+                        <label for="name">Horário:</label>
+                        <select class="listaH" name="horario">
+                            <option>8h30</option>
+                            <option>10h30</option>
+                            <option>11h30</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+
+        <div class="tit">
+            <img src="~/images/numero3.png" width="50" height="50">
+            <h1>Contato</h1>
+        </div>
+
+        <section class="marcar2">
+            <form id="selectMarcar" autocomplete="off">
+
+                <fieldset id="areaMarcar">
+
+                    <div class="mc3">
+                        <label for="name">Email:</label>
+                        <input class="campo_selecionarC3" type="text" id="name" placeholder="">
+
+                        <label for="name">Tel:</label>
+                        <input class="campo_selecionarC4" type="text" id="name" placeholder="">
+                    </div>
+
+                </fieldset>
+            </form>
+        </section>
+
+        <div class="buttonM">
+            <button id="bmarcar" type="submit">Marcar</button>
+        </div>
+    </main>
+
+    <footer>
+        <div id="display_footer">
+            <nav id="telefone">
+                <ol>
+                    <li><img src="~/images/telefone.png" alt="telefone" width="32" height="32"> (XX) XXXX-XXXX</li>
+                </ol>
+            </nav>
+
+            <div id="logo_footer">
+                <h1>
+                    <a href="@Url.Action("Index","Navegacao")"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+                </h1>
+            </div>
+
+            <nav id="redesocial">
+                <ol>
+                    <li><a target="" href="https://pt-br.facebook.com/"><img src="~/images/facebook.png" style="margin-right: -0.5em;" alt="Facebook" width="32" height="32"></a></li>
+                    <!-- BOTEI MARGEM NEGATIVA NO CSS INLINE, PQ O ÍCONE NÃO É PROPORCIONAL AOS OUTROS. -->
+                    <li><a href="https://www.instagram.com/?hl=pt-br"><img src="~/images/instagram.png" alt="Instagram" width="32" height="32"></a></li>
+                    <li><a href="https://twitter.com/login?lang=pt"><img src="~/images/twitter.png" alt="Twitter" width="32" height="32"></a></li>
+                </ol>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

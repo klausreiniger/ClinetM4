@@ -1,0 +1,41 @@
+body{
+	font-family: 'Playfair Display', serif;
+}
+form#atendimento{
+	margin-left: 22em;
+	border-radius: 2em;
+	width:50em;
+	height:33em; 
+	background-color: #2D7992;
+	color: white;
+	padding-top: 1em;
+	display: flex;
+	justify-content: center;
+}
+form#atendimento div{
+	margin: 2em 10em;
+}
+form#atendimento fieldset{
+	margin-top: 1.5em;
+	padding-top: 2em;
+	border-radius: 2em;
+	border: 3px solid white;
+	margin-left : 2em;
+	margin-right: 2em;
+	padding-bottom: 1em;
+	margin-bottom: 3em;
+}
+form#atendimento input{
+	border-radius: 10.5em;
+	border: 0.5px solid white;
+}
+button{
+	background-color: #FFA500;
+	color: white;
+	border-radius: 1em;
+	padding: 0.5em 4.1em;
+	border-color:#2D7992 ;
+}
+button#b1{
+	background-color: #85A0A9;
+}

@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Lekton&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+header div#header_superior{
+	background-color: #25566B;
+	height: 6em;
+	display: flex;
+}
+
+header div#header_superior h1 a{
+	color: white;
+	text-decoration: none;
+	font-family: 'Lekton', sans-serif;
+	font-size: 36px;
+	margin: 1em 2em;
+}
+
+header div#header_superior img{
+	margin-top: 0.5em;
+	vertical-align: text-bottom;
+}
+
+header div#user{
+	height: 50px;
+	margin-top: 1em;
+	margin-left: auto;
+    width: 8%;
+}
+
+header div#user img{
+	vertical-align: middle;
+}
+
+header div#nome_login p{
+	color: white;
+	margin-left: 60em;
+	margin-top: 1em;
+	text-align: center;
+}
+
+header div#form_pesquisa{
+	margin-left: auto;
+	width: 0%;
+	margin-right: -20em;
+}
+
+header div#form_pesquisa form{
+	margin-top: 2em;
+	width: 327px;
+
+}
+
+header div#form_pesquisa input{
+	width: 286px;
+	height: 31px;
+	border-radius: 10px;
+	border: 0;
+	overflow: hidden;
+	max-width: 100%;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+header div#form_pesquisa input:hover{
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	border: none;
+}
+
+header div#form_pesquisa a img{
+	margin: 0;
+	vertical-align: middle;
+	margin-left: 1em;
+}
+
+header div#user{
+	height: 50px;
+	margin-top: 1em;
+	margin-left: auto;
+    width: 8%;
+}
+
+header div#user img{
+	vertical-align: middle;
+}
+
+
+header nav{
+	background-color: #85A0A9;
+	text-align: center;
+	padding-top: 0.5em;
+}
+
+header nav ol{
+	margin: 0;
+	height: 3em;
+}
+header nav li{
+	display: inline;
+	font-family: 'Lekton', sans-serif;
+	font-size: 24px;
+	margin: 0em 1em;
+	padding-top: 0.25em;
+	padding-bottom: 0.40em;
+}
+
+header nav li:hover{
+	background-color: #25566B;
+}
+
+header nav li a{
+	text-decoration: none;
+	color: white;
+	padding: 0 2em;
+}
+
+header nav ol li a:hover{
+	text-decoration: none;
+	color: white;
+
+}
+
+header nav li a img{
+	vertical-align: top;
+}
+
+
+footer{
+	background-color: #25566B;
+	color: white;
+	font-size: 20px;
+	height: 5em;
+	font-family: 'Lekton', sans-serif;
+}
+
+footer h1{
+	font-size: 36px;
+}
+
+footer div#display_footer{
+	display: flex;
+	justify-content: space-around;
+}
+
+footer nav#telefone{
+	margin-top: 1.5em;
+}
+
+footer nav#telefone img{
+	vertical-align: top;
+}
+
+footer nav#redesocial{
+	margin-top: 1.5em;
+}
+
+footer nav#redesocial img{
+	vertical-align: top;
+}
+
+footer div#logo_footer{
+	margin-top: 1em;
+}
+
+footer div#logo_footer img{
+	vertical-align: text-bottom;
+}
+
+footer nav li a img{
+	vertical-align: top;
+}
+
+footer nav li{
+	display: inline;
+}
+
+footer a{
+	text-decoration: none;
+	color: white;
+}
+
+footer a:hover{
+	text-decoration: none;
+	color: white;
+}
+
+
+body{
+	font-family: 'Playfair Display', serif;
+}
+main{
+	margin-top: 2em;
+	align-items: center;
+	display : block;
+	margin-bottom: 2em;
+}
+div.input-group-text{
+	background-color: white;
+}
+input{
+	margin-bottom: 0.5em;
+}
+fieldset#conts{
+	margin-top: -0.5em;
+	padding-top: 3em;
+	border-radius: 1em;
+	border: 3px solid white;
+	margin-left : 2em;
+	margin-right: 2em;
+	padding-bottom: 3em;
+	margin-bottom: 3em;
+}
+#titulo{
+	background-color: #25566B;
+	color: white;
+	margin-left: 10em;
+	width: 300px;
+	height: 8em;
+	text-align: center;
+	border-radius: 0.5em;
+	font-weight: normal;
+}
+button{
+	background-color: #FFA500;
+	border-width: 0;
+	border-radius: 10px;
+	width: 10%;
+	height: 50px;
+	color: white;
+	box-shadow: 1px 1px black;
+	align-self: right;
+	margin-top: 0.5em;
+	margin-left: 87%;
+}
+#contato{
+	background-color: rgba(45, 121, 146,0.5);
+	margin: 0 auto;
+	width: 40%;
+	border-radius: 1em;
+	padding-bottom: 0.5em;
+	padding-top: 1em;
+}
+#exampleFormControlTextarea1{
+	width: 95.25%;
+	height: 15em;
+	align-self: center;
+	margin: 0 auto;
+}
+#inlineFormInputGroup{
+	margin-bottom: 1em;
+}
+
+
+body{
+	font-family: 'Playfair Display', serif;
+}
+button#envlog{
+	background-color: #FFA500;
+	border-width: 0;
+	border-radius: 10px;
+	width: 70px;
+	height: 50px;
+	color: white;
+	box-shadow: 1px 1px black;
+	align-self: center;
+	margin-left: 8em;
+	margin-bottom: 3em;
+}
+#login input#inlineFormInputGroup{
+	width: 80px;
+	margin-bottom: 3em;
+}
+#login div.input-group-text{
+	margin-bottom: 3em;
+}
+main{
+	align-items: center;
+	display : block;
+}
+form#login{
+	padding: 2em;
+	background-color: rgba(45, 121, 146,0.5);
+	border-color: white;
+	border-width: 3em;
+	align-items: center;
+	margin: 0 auto;
+	width: 400px;
+	border-color: orange;
+	border-width: 10px;
+	align-self: center;
+	border-radius: 1em;
+	align-content: center;
+}
+#logim{
+	margin-bottom:-5em;
+	margin-left: 7.5em;
+}
+#login fieldset{
+	border-radius: 1em;
+	padding-top: 7em;
+	border: 3px solid white;
+}
+div.input-group-text{
+	background-color: white;
+}
+input.placeholder{
+	text-align: center;
+}
+#register{
+	margin: 0 auto;
+	background-color: rgba(45, 121, 146,0.5);
+	width: 70em;
+}
+#l2{
+	display: flex;
+	align-items: center;
+}
+#l3{
+	display: inline-flex;
+}
+#l1 input{
+	margin-bottom: 0.5em;
+}
+#l2 input{
+	align-self: center;
+	padding-right: 12.2em;
+	margin-bottom: 0.5em;
+}
+#l3 input{
+	align-self: center;
+	padding-right: 12.2em;
+	margin-bottom: 0.5em;
+}
+#register{
+	margin-top: 5em;
+	width: 900px;
+	padding-top: 3em;
+	border-radius: 1em;
+}
+#register fieldset{
+	margin-top: -0.1em;
+	padding-top: 3em;
+	border-radius: 1em;
+	border: 3px solid white;
+	margin-left : 2em;
+	margin-right: 2em;
+	padding-bottom: 3em;
+	margin-bottom: 3em;
+}
+#titulo{
+	background-color: #25566B;
+	color: white;
+	margin-left: 18em;
+	margin-bottom: 1em;
+	width: 250px;
+	height: 4em;
+	text-align: center;
+	border-radius: 0.5em;
+	font-weight: normal;
+	font-size: 14px;
+}
+#checkboxfieldset{
+	display: flex;
+	color: white;
+	font-size: 20px;
+}
+#checkboxfieldset #parts{
+	margin: 0 auto;
+}
+button#envcad{
+	background-color: #FFA500;
+	border-width: 0;
+	border-radius: 10px;
+	width: 92%;
+	height: 50px;
+	color: white;
+	box-shadow: 1px 1px black;
+	align-self: center;
+	margin-bottom: 3em;
+	margin-left: 2.2em;
+}

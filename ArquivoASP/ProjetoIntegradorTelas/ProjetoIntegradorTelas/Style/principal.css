@@ -1,0 +1,192 @@
+﻿b@import url('https://fonts.googleapis.com/css2?family=Lekton&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header div#header_superior {
+    background-color: #25566B;
+    height: 6em;
+    display: flex;
+}
+
+    header div#header_superior h1 a {
+        color: white;
+        text-decoration: none;
+        font-family: 'Lekton', sans-serif;
+        font-size: 36px;
+        margin: 1em 2em;
+    }
+
+    header div#header_superior img {
+        margin-top: 0.5em;
+        vertical-align: text-bottom;
+    }
+
+header div#user {
+    height: 50px;
+    margin-top: 1em;
+    margin-left: auto;
+    width: 8%;
+}
+
+    header div#user img {
+        vertical-align: middle;
+    }
+
+header div#nome_login p {
+    color: white;
+    margin-left: 60em;
+    margin-top: 1em;
+    text-align: center;
+}
+
+header div#form_pesquisa {
+    margin-left: auto;
+    width: 0%;
+    margin-right: -20em;
+}
+
+    header div#form_pesquisa form {
+        margin-top: 2em;
+        width: 327px;
+    }
+
+    header div#form_pesquisa input {
+        width: 286px;
+        height: 31px;
+        border-radius: 10px;
+        border: 0;
+        overflow: hidden;
+        max-width: 100%;
+        -moz-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+        header div#form_pesquisa input:hover {
+            -moz-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+            border: none;
+        }
+
+    header div#form_pesquisa a img {
+        margin: 0;
+        vertical-align: middle;
+        margin-left: 1em;
+    }
+
+header div#user {
+    height: 50px;
+    margin-top: 1em;
+    margin-left: auto;
+    width: 8%;
+}
+
+    header div#user img {
+        vertical-align: middle;
+    }
+
+/*nnnnnnnnnnnnnnnnnnnnnnn   menu   nnnnnnnnnnnnnnnnnnn*/
+
+header nav {
+    background-color: #415454;
+    text-align: center;
+    padding-top: 0.5em;
+}
+
+    header nav ol {
+        margin: 0;
+        height: 3em;
+    }
+
+    header nav li {
+        display: inline;
+        font-family: 'Lekton', sans-serif;
+        font-size: 24px;
+        margin: 0em 1em;
+        padding-top: 0.55em;
+        padding-bottom: 0.70em;
+    }
+
+        header nav li:hover {
+            background-color: #25566B;
+        }
+
+        header nav li a {
+            text-decoration: none;
+            color: white;
+            padding: 0 2em;
+        }
+
+    header nav ol li a:hover {
+        text-decoration: none;
+        color: white;
+    }
+
+    header nav li a img {
+        vertical-align: top;
+    }
+
+/*nnnnnnnnnnnnnnnnnnn footer nnnnnnnnnnnnnnnnnnnnnnn*/
+
+footer {
+    background-color: #25566B;
+    color: white;
+    font-size: 20px;
+    height: 5em;
+    font-family: 'Lekton', sans-serif;
+}
+
+    footer h1 {
+        font-size: 36px;
+    }
+
+    footer div#display_footer {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    footer nav#telefone {
+        margin-top: 1.5em;
+    }
+
+        footer nav#telefone img {
+            vertical-align: top;
+        }
+
+    footer nav#redesocial {
+        margin-top: 1.5em;
+    }
+
+        footer nav#redesocial img {
+            vertical-align: top;
+        }
+
+    footer div#logo_footer {
+        margin-top: 1em;
+    }
+
+        footer div#logo_footer img {
+            vertical-align: text-bottom;
+        }
+
+    footer nav li a img {
+        vertical-align: top;
+    }
+
+    footer nav li {
+        display: inline;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: white;
+    }
+
+        footer a:hover {
+            text-decoration: none;
+            color: white;
+        }

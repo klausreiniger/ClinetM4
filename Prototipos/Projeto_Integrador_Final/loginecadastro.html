@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" lang="pt-br">
+	<link rel="icon" href="images/logo_footer.png">
+	<title>Clinet: Login e Cadastro</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles/index.css">
+	<link rel="stylesheet" type="text/css" href="styles/principal.css">
+</head>
+<body>
+	<header>
+		<div id="header_superior">
+			<h1>
+				<a href="index.html"><img src="images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+			</h1>
+
+			<div id="form_pesquisa">
+				<form action="recebedados.html" method="post">
+					<input type="text" name="pesquisa">
+					<a href="index.html">
+						<img src="images/lupa.png" width="20" height="20">
+					</a>
+				</form>
+			</div>
+
+			<div id="user">
+				<a href="loginecadastro.html">
+					<img src="images/user.png" alt="Inscreva-se ou acesse sua conta">					
+				</a>
+
+			</div>			
+		</div>
+		
+		<nav>
+			<ol>
+				<li><a href="clinica.html"><img src="images/clinica.png" width="32" height="32"> Clínicas</a></li>
+				<li><a href="marcarconsulta.html"><img src="images/marcacao.png" width="32" height="32"> Marcações</a></li>
+				<li><a href="contato.html"><img src="images/contato.png" width="32" height="32"> Contato</a></li>
+			</ol>
+		</nav>
+	</header>
+	<main>
+		<form id="login">
+			<img id="logim" src="images/loginicon.png" width="100px" height="100px">
+			<fieldset>
+			<div class="col-auto">
+	      		<label class="sr-only" for="inlineFormInputGroup">Username</label>
+	      		<div class="input-group mb-2">
+	        		<div class="input-group-prepend">
+	          			<div class="input-group-text"><img src="images/userblack.jfif" alt="User_logo"  width="20px" height="20px"></div>
+	        		</div>
+	       			<input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Usuário">
+	   			</div>
+	    	</div>
+	    	<div class="col-auto">
+	      		<label class="sr-only" for="inlineFormInputGroup">Username</label>
+	      		<div class="input-group mb-2">
+	        		<div class="input-group-prepend">
+	          			<div class="input-group-text"><img src="images/lock.png" alt="cadeado" width="20px" height="20px"></div>
+	        		</div> 
+	       			<input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Senha">
+	   			</div>
+	    	</div>
+	    	<button id="envlog" type="submit">Login</button>
+	    </fieldset>
+		</form>
+		<div id="register">
+			<form id="inscreva">
+				<section id="titulo">
+					<img src="images/fotoinscreva.png">
+				</section>
+				<fieldset>
+				<div id="l1">
+					<div class="col-auto">
+	      			<label class="sr-only" for="inlineFormInputGroup">Username</label>
+	      				<div class="input-group mb-2">
+	       					<input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Nome Completo">
+	   					</div>
+	    			</div>
+				</div>
+				<div id="l2">
+					<div class="col-auto">
+						<label class="sr-only" for="inlineFormInputGroup">Username</label>
+	      				<div class="input-group mb-2">
+	       					<input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Telefone">
+	   					</div>
+	    			</div>
+	    			<div class="col-auto" margin-right="50em">
+	    				<label class="sr-only" for="inlineFormInputGroup">Username</label>
+	      				<div class="input-group mb-2">
+	       					<input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Data de Nascimento">
+	   					</div>
+	    			</div>
+				</div>
+				<div id="l3">
+					<div class="col-auto">
+	      				<div class="input-group mb-2">
+	       					<input type="text" class="form-control" id="inlineFormInputGroup" placeholder="CPF" width="60px">
+	   					</div>
+	    			</div>
+	    			<div class="col-auto">
+	      				<div class="input-group mb-2">
+	       					<input type="text" class="form-control" id="inlineFormInputGroup" placeholder="RG" width="60px">
+	   					</div>
+	    			</div>
+				</div>
+				<div id="l4">
+					<div class="col-auto">
+	      			<label class="sr-only" for="inlineFormInputGroup">Username</label>
+	      				<div class="input-group mb-2">
+	       					<input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Email">
+	   					</div>
+	    			</div>
+				</div>
+			</fieldset>
+			</form>
+			<form id="tipo">
+				<section id="titulo">
+					<img src="images/fotoperfil.png">
+				</section>
+				<fieldset  id="checkboxfieldset">
+					<div id="parts">
+					<input type="checkbox" id="defaultcheck" value=""/>
+					<label for="defaultcheck">Secretária
+					</label>
+				</div>
+				<div id="parts">
+					<input type="checkbox" id="defaultcheck2" value=""/>
+					<label for="defaultcheck2">Paciente
+					</label>
+				</div>
+				</fieldset>
+			</form>
+			<form id="conta">
+				<section id="titulo">
+					<img src="images/fotousuario.png">
+				</section>
+				<fieldset>
+					<div id="l2">
+					<div class="col-auto">
+						<label class="sr-only" for="inlineFormInputGroup">Username</label>
+	      				<div class="input-group mb-2">
+	       					<input type="text" class="form-control" id="inlineFormInputGroup" placeholder="User">
+	   					</div>
+	    			</div>
+	    			<div class="col-auto" margin-right="50em">
+	    				<label class="sr-only" for="inlineFormInputGroup">Username</label>
+	      				<div class="input-group mb-2">
+	       					<input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Senha">
+	   					</div>
+	    			</div>
+				</div>
+				</fieldset>
+				<button id="envcad" type="submit">Registrar-se</button>
+			</form>
+		</div>
+	</main>
+	<footer>
+		<div id="display_footer">
+			<nav id="telefone">
+				<ol>
+					<li><img src="images/telefone.png" alt="telefone" width="32" height="32"> (XX) XXXX-XXXX</li>
+				</ol>
+			</nav>
+
+			<div id="logo_footer">
+				<h1>
+					<a href="index.html"><img src="images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+				</h1>
+			</div>
+
+			<nav id="redesocial">
+				<ol>
+					<li><a target="" href="https://pt-br.facebook.com/"><img src="images/facebook.png" style="margin-right: -0.5em;" alt="Facebook" width="32" height="32"></a></li> 
+					<!-- BOTEI MARGEM NEGATIVA NO CSS INLINE, PQ O ÍCONE NÃO É PROPORCIONAL AOS OUTROS. -->
+					<li><a href="https://www.instagram.com/?hl=pt-br"><img src="images/instagram.png" alt="Instagram" width="32" height="32"></a></li>
+					<li><a href="https://twitter.com/login?lang=pt"><img src="images/twitter.png" alt="Twitter" width="32" height="32"></a></li>
+				</ol>
+			</nav>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

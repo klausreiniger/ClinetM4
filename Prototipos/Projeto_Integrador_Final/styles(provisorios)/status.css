@@ -1,0 +1,83 @@
+body{
+	font-family: 'Playfair Display', serif;
+}
+form#atendimento{
+	margin-left: 22em;
+	border-radius: 2em;
+	width:50em;
+	height:37em; 
+	background-color: #2D7992;
+	color: white;
+	margin-top: 3em;
+}
+form#atendimento p {
+	text-align: center;
+	font-size: 30px;
+	margin: 0em 1em;
+	padding: 0.5em 0em;
+}
+form#atendimento div{
+	margin: 1em 1em;
+}
+form#atendimento fieldset{
+	margin-top: -0.5em;
+	padding-top: 1em;
+	border-radius: 1em;
+	border: 3px solid white;
+	margin-left : 2em;
+	margin-right: 2em;
+	padding-bottom: 1em;
+	margin-bottom: 3em;
+}
+
+div#login{
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+form#atendimento input{
+	border-radius: 1em;
+	border: 0.5px solid white;
+}
+div#dados label{
+	margin-left: 10em;
+	margin: 1em 1em;
+	font-size: 20px;
+}
+div#dados input{
+	margin-left: 5em;
+	margin: 1em 1em;
+}
+form#consultar{
+	margin-left: 22em;
+	border-radius: 2em;
+	width:50em;
+	height:37em; 
+	background-color: #2D7992;
+	color: white;
+	margin-top: 5em;
+	margin-bottom: 3em;
+}
+form#consultar p {
+	text-align: center;
+	font-size: 30px;
+	margin: 0em 1em;
+	padding: 0.5em 0em;
+}
+form#consultar div{
+	margin: 1em 1em;
+}
+form#consultar fieldset{
+	margin-top: -0.5em;
+	padding-top: 1em;
+	border-radius: 1em;
+	border: 3px solid white;
+	margin-left : 2em;
+	margin-right: 2em;
+	padding-bottom: 1em;
+	margin-bottom: 3em;
+}
+form#consultar input{
+	border-radius: 1em;
+	border: 0.5px solid white;
+}

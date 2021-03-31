@@ -1,0 +1,247 @@
+﻿@model IQueryable<Modelo.Usuarios.Medico>
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" lang="pt-br">
+    <link rel="icon" href="~/images/logo_footer.png">
+    <title>Clinet: Secretária - Cadastrar Médico</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/Style/principal.css">
+    <link rel="stylesheet" type="text/css" href="~/Style/index.css">
+    <link rel="stylesheet" type="text/css" href="~/Style/cadastramedico.css">
+</head>
+<body>
+    <header>
+        <div id="header_superior">
+            <h1>
+                <a href="@Url.Action("SecretariaPaginaInicial", "SecretariaAcoes")"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+            </h1>
+
+            <div id="form_pesquisa">
+                <form action="recebedados.html" method="post">
+                    <input type="text" name="pesquisa">
+                    <a href="">
+                        <img src="~/images/lupa.png" width="20" height="20">
+                    </a>
+                </form>
+            </div>
+
+            <div id="user">
+                <a href="@Url.Action("SecretariaDadosPessoais", "SecretariaAcoes")">
+                    <img src="~/images/user.png" alt="Inscreva-se ou acesse sua conta">
+                </a>
+
+            </div>
+        </div>
+
+        <nav>
+            <ol>
+                <li><a href="@Url.Action("SecretariaCadastrarClinica", "SecretariaAcoes")"><img src="~/images/clinica.png" width="32" height="32"> Clínicas</a></li>
+                <li><a href="@Url.Action("SecretariaAgendamento", "SecretariaAcoes")"><img src="~/images/caderno.png" width="32" height="32"> Agendamentos</a></li>
+                <li><a href="@Url.Action("ListarMedico", "SecretariaAcoes")"><img src="~/images/doctor.png" width="32" height="32"> Médicos</a></li>
+                <li><a href="@Url.Action("SecretariaHorarios", "SecretariaAcoes")"><img src="~/images/clock.png" width="32" height="32"> Horários</a></li>
+                <li><a href="@Url.Action("Contato", "Navegacao")"><img src="~/images/contato.png" width="32" height="32"> Contato</a></li>
+            </ol>
+        </nav>
+
+    </header>
+    <main>
+        <section>
+            <form id="form_filtro">
+                <div>
+                    <input type="text" name="" placeholder="Nome do médico">
+                </div>
+
+                <div>
+                    <input type="text" name="" placeholder="CRM">
+                </div>
+
+                <div>
+                    <input type="text" name="" placeholder="Especialidade">
+                </div>
+
+                <div id="limpar_filtro">
+                    <a href="">
+                        <img src="~/images/trash.png" width="24" height="24"> Limpar filtro
+                    </a>
+                </div>
+
+                <div id="filtrar">
+                    <a href="">
+                        <img src="~/images/filter.png" width="24" height="24">Filtrar
+                    </a>
+                </div>
+            </form>
+        </section>
+
+        <section id="flex_clinica">
+            @foreach (var v in Model)
+            {
+                <div id="clinica_info">
+                    <a href="@Url.Action("CRUDMedicoReduzido", "SecretariaAcoes", new { id = v.medicoID})" style="color: white; ">
+                        <h2>@Html.DisplayFor(modelItem => v.nome)</h2>
+
+                        <img id="clinica_foto" src="~/images/medico1.png" width="170" height="170" />
+
+
+                        <div id="paragrafoClini_info">
+                            <p>
+                                Especialidade: @Html.DisplayFor(modelItem => v.especialidade)
+                            </p>
+
+                            <p>
+                                CRM: @Html.DisplayFor(modelItem => v.CRM)
+                            </p>
+
+                        </div>
+                    </a>
+                </div>
+            }
+        </section>
+        <!--
+            <div id="clinica_info">
+                <a href="Url.Action("medico_cadastrar", "Paginass")" style="color: white; ">
+                    <h2>Dra. Paula Diniz</h2>
+
+                    <img id="clinica_foto" src="~/images/medico1.png" width="170" height="170">
+
+
+                    <div id="paragrafoClini_info">
+                        <p>
+                            Especialidade: Neurologista
+                        </p>
+
+                        <p>
+                            CRM: 5555
+                        </p>
+
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="flex_clinica">
+            <div id="clinica_info">
+                <a href="Url.Action("medico_cadastrar", "Paginass")" style="color: white; ">
+                    <h2>Dra. Paula Diniz</h2>
+
+                    <img id="clinica_foto" src="~/images/medico1.png" width="170" height="170">
+
+                    <div id="paragrafoClini_info">
+                        <p>
+                            Especialidade: Neurologista
+                        </p>
+
+                        <p>
+                            CRM: 5555
+                        </p>
+
+                    </div>
+                </a>
+            </div>
+
+            <div id="clinica_info">
+                <a href="Url.Action("medico_cadastrar", "Paginass")" style="color: white; ">
+                    <h2>Dra. Paula Diniz</h2>
+
+                    <img id="clinica_foto" src="~/images/medico1.png" width="170" height="170">
+
+
+                    <div id="paragrafoClini_info">
+                        <p>
+                            Especialidade: Neurologista
+                        </p>
+
+                        <p>
+                            CRM: 5555
+                        </p>
+
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="flex_clinica">
+            <div id="clinica_info">
+                <a href="Url.Action("medico_cadastrar", "Paginass")" style="color: white; ">
+                    <h2>Dra. Paula Diniz</h2>
+
+                    <img id="clinica_foto" src="~/images/medico1.png" width="170" height="170">
+
+
+                    <div id="paragrafoClini_info">
+                        <p>
+                            Especialidade: Neurologista
+                        </p>
+
+                        <p>
+                            CRM: 5555
+                        </p>
+
+                    </div>
+                </a>
+            </div>
+
+            <div id="clinica_info">
+                <a href="Url.Action("medico_cadastrar", "Paginass")" style="color: white; ">
+                    <h2>Dra. Paula Diniz</h2>
+
+                    <img id="clinica_foto" src="~/images/medico1.png" width="170" height="170">
+
+                    <div id="paragrafoClini_info">
+                        <p>
+                            Especialidade: Neurologista
+                        </p>
+
+                        <p>
+                            CRM: 5555
+                        </p>
+
+                    </div>
+                </a>
+            </div>
+        </section>
+                      -->
+    </main>
+
+
+    <footer>
+        <div id="display_footer">
+            <nav id="telefone">
+                <ol>
+                    <li><img src="~/images/telefone.png" alt="telefone" width="32" height="32"> (XX) XXXX-XXXX</li>
+                </ol>
+            </nav>
+
+            <div id="logo_footer">
+                <h1>
+                    <a href="@Url.Action("Index", "Navegacao")"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+                </h1>
+            </div>
+
+            <nav id="redesocial">
+                <ol>
+                    <li><a target="" href="https://pt-br.facebook.com/"><img src="~/images/facebook.png" style="margin-right: -0.5em;" alt="Facebook" width="32" height="32"></a></li>
+                    <!-- BOTEI MARGEM NEGATIVA NO CSS INLINE, PQ O ÍCONE NÃO É PROPORCIONAL AOS OUTROS. -->
+                    <li><a href="https://www.instagram.com/?hl=pt-br"><img src="~/images/instagram.png" alt="Instagram" width="32" height="32"></a></li>
+                    <li><a href="https://twitter.com/login?lang=pt"><img src="~/images/twitter.png" alt="Twitter" width="32" height="32"></a></li>
+                </ol>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
