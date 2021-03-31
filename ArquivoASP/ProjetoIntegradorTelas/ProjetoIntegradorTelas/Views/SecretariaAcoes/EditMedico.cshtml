@@ -55,24 +55,24 @@
                         <div id="login" style="margin-top: -1em;">
                             <div id="dados">
                                 <div>
-                                    @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @id = "nome", @placeholder = "Nome:", @style = " height: 2.5em; width: 17em;", @disabled="disabled" } })
+                                    @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @id = "nome", @placeholder = "Nome:", @style = " height: 2.5em; width: 17em;" } })
                                     @Html.ValidationMessageFor(model => model.nome, "", new { @class = "text-danger" })
                                 </div>
                                 <div>
-                                    @Html.EditorFor(model => model.especialidade, new { htmlAttributes = new { @id = "especialidade", @placeholder = "Especialidade:", @style = " height: 2.5em; width: 17em;", @disabled = "disabled" } })
+                                    @Html.EditorFor(model => model.especialidade, new { htmlAttributes = new { @id = "especialidade", @placeholder = "Especialidade:", @style = " height: 2.5em; width: 17em;" } })
                                     @Html.ValidationMessageFor(model => model.especialidade, "", new { @class = "text-danger" })
                                 </div>
                                 <div>
-                                    @Html.EditorFor(model => model.CRM, new { htmlAttributes = new { @id = "crm", @placeholder = "CRM:", @style = " height: 2.5em; width: 17em;", @disabled = "disabled" } })
+                                    @Html.EditorFor(model => model.CRM, new { htmlAttributes = new { @id = "crm", @placeholder = "CRM:", @style = " height: 2.5em; width: 17em;" } })
                                     @Html.ValidationMessageFor(model => model.CRM, "", new { @class = "text-danger" })
                                 </div>
                                 <div>
-                                    @Html.EditorFor(model => model.telefone, new { htmlAttributes = new { @placeholder = "Contato:", @style = " height: 2.5em; width: 17em;", @disabled = "disabled" } })
+                                    @Html.EditorFor(model => model.telefone, new { htmlAttributes = new { @placeholder = "Contato:", @style = " height: 2.5em; width: 17em;" } })
                                     @Html.ValidationMessageFor(model => model.telefone, "", new { @class = "text-danger" })
 
                                 </div>
                                 <div>
-                                    @Html.EditorFor(model => model.username, new { htmlAttributes = new { @id = "user", @placeholder = "Usuário:", @style = " height: 2.5em; width: 17em;" , @disabled = "disabled" } })
+                                    @Html.EditorFor(model => model.username, new { htmlAttributes = new { @id = "user", @placeholder = "Usuário:", @style = " height: 2.5em; width: 17em;" } })
                                     @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
 
                                 </div>
@@ -82,12 +82,13 @@
                         </div>
                     </div>
                     <div id="botoescrudmedico" style="width: 17em;display: flex;margin-left: 3.25em;margin-top: -14em;">
-                            <a href="@Url.Action("EditMedico", "SecretariaAcoes", new { id = Model.medicoID})">
-                                <div id="envcadprototype" style="margin-top: 10px;margin-left:4em;">
-                                    <h5 style="font-size: 16px;">Editar</h5>
-                                </div>
-                            </a>
-</div>
+                        <button type="submit" style="width: 115px;">Atualizar</button>
+                        <a href="@Url.Action("ApagarMedico", "SecretariaAcoes", new { id = Model.medicoID})">
+                            <div id="envcadprototype" style="margin-top: 10px;">
+                                <h5 style="font-size: 16px;">Deletar</h5>
+                            </div>
+                        </a>
+                    </div>
                 </fieldset>
             </div>
         }

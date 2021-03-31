@@ -19,7 +19,7 @@ namespace ProjetoIntegradorTelas.Controllers
                 if (ModelState.IsValid)
                 {
                     medicoServico.GravarMedico(medico);
-                    return RedirectToAction("secretariaPagInicial", "Paginass");
+                    return RedirectToAction("SecretariaPaginaInicial", "SecretariaAcoes");
                 }
                 return View(medico);
             }
@@ -53,6 +53,12 @@ namespace ProjetoIntegradorTelas.Controllers
         public ActionResult AtualizarMedico(Medico medico)
         {
             return GravarMedico(medico);
+        }
+        public ActionResult EditMedico(long? id) {
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            Medico medico = medicoServico.ObterMedicoPorId((long)id);
+            if (medico == null) return HttpNotFound();
+            return View(medico);
         }
         public ActionResult ApagarMedico(long? id)
         {
