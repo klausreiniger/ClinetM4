@@ -41,26 +41,49 @@ namespace ProjetoIntegradorTelas.Controllers
         public ActionResult LoginForm(Paciente paciente)
         {
             bool valid = pacienteServico.ValidarPaciente(paciente);
-            if (valid) return RedirectToAction("PacientePaginaInicial", "Paciente");
-            else return RedirectToAction("LoginCadastroPaciente","Paciente");
+            if (valid)
+            {
+                Paciente paciente_ = pacienteServico.ObterPacientePorUsername(paciente.username);
+                return RedirectToAction("PacientePaginaInicial", "Paciente", new { username = paciente.username });
+            }
+            else return RedirectToAction("LoginCadastroPaciente", "Paciente");
         }
-        public ActionResult PacientePaginaInicial()
+        public ActionResult PacientePaginaInicial(string username)
         {
-            return View();
+            Paciente paciente = pacienteServico.ObterPacientePorUsername(username);
+            return View(paciente);
         }
 
-        public ActionResult PacienteDadosPessoais()
+        public ActionResult PacienteDadosPessoais(string username)
         {
-            return View();
+            Paciente paciente = pacienteServico.ObterPacientePorUsername(username);
+            return View(paciente);
+        }
+        [HttpPost]
+        public ActionResult PacienteDadosPessoais(Paciente paciente)
+        {
+            return RedirectToAction("PacienteEdit","Paciente", paciente.username);
+        }
+        public ActionResult PacienteEdit(string username)
+        {
+            Paciente paciente = pacienteServico.ObterPacientePorUsername(username);
+            return View(paciente);
+        }
+        [HttpPost]
+        public ActionResult PacienteEdit2(Paciente paciente) {
+            pacienteServico.GravarPaciente(paciente);
+            return RedirectToAction("PacientePaginaInicial", new { username = paciente.username });
         }
 
-        public ActionResult PacienteMarcacao()
+        public ActionResult PacienteMarcacao(string  username)
         {
-            return View();
+            Paciente paciente = pacienteServico.ObterPacientePorUsername(username);
+            return View(paciente);
         }
-        public ActionResult PacienteHistoricoConsultas()
+        public ActionResult PacienteHistoricoConsultas(string username)
         {
-            return View();
+            Paciente paciente = pacienteServico.ObterPacientePorUsername(username);
+            return View(paciente);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿
+﻿@model Modelo.Usuarios.Paciente
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +13,11 @@
     <header>
         <div id="header_superior">
             <h1>
-                <a href="@Url.Action("PacientePaginaInicial", "Paciente")"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+                <a href="@Url.Action("PacientePaginaInicial", "Paciente",new { username = Model.username})"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
             </h1>
 
             <div id="user">
-                <a href="@Url.Action("PacienteDadosPessoais", "Paciente")">
+                <a href="@Url.Action("PacienteDadosPessoais", "Paciente",new { username = Model.username})">
                     <img src="~/images/user.png" alt="Inscreva-se ou acesse sua conta">
                 </a>
             </div>
@@ -25,9 +25,9 @@
 
         <nav>
             <ol>
-                <li><a href="@Url.Action("PacienteMarcacao", "Paciente")"><img src="~/images/marcar.png" width="32" height="32"> Marcação</a></li>
-                <li><a href="@Url.Action("PacienteStatus", "Paciente")"><img src="~/images/status.png" width="32" height="32"> Status da consulta</a></li>
-                <li><a href="@Url.Action("PacienteHistoricoConsultas", "Paciente")"><img src="~/images/historico-medico.png" width="32" height="32"> Histórico de consulta</a></li>
+                <li><a href="@Url.Action("PacienteMarcacao", "Paciente",new { username = Model.username})"><img src="~/images/marcar.png" width="32" height="32"> Marcação</a></li>
+                <li><a href="@Url.Action("PacienteStatus", "Paciente",new { username = Model.username})"><img src="~/images/status.png" width="32" height="32"> Status da consulta</a></li>
+                <li><a href="@Url.Action("PacienteHistoricoConsultas", "Paciente",new { username = Model.username})"><img src="~/images/historico-medico.png" width="32" height="32"> Histórico de consulta</a></li>
                 <li><a href="@Url.Action("Contato", "Navegacao")"><img src="~/images/contato.png" width="32" height="32"> Contato</a></li>
             </ol>
         </nav>
@@ -80,28 +80,28 @@
             </div>
         </section>
         <article class="caixas2">
-            <a href="@Url.Action("PacienteDadosPessoais", "Paciente")">
+            <a href="@Url.Action("PacienteDadosPessoais", "Paciente",new { username = Model.username})">
                 <div class="box">
                     <img src="~/images/folder.png" alt="ícone de marcação" width="90" height="90">
                     <p class="sec">Dados pessoais</p>
                 </div>
             </a>
 
-            <a href="@Url.Action("PacienteMarcacao", "Paciente")">
+            <a href="@Url.Action("PacienteMarcacao", "Paciente",new { username = Model.username})">
                 <div class="box">
                     <img src="~/images/marcar.png" alt="ícone de marcação" width="90" height="90">
                     <p class="sec">Marcar consulta</p>
                 </div>
             </a>
 
-            <a href="@Url.Action("PacienteStatus", "Paciente")">
+            <a href="@Url.Action("PacienteStatus", "Paciente",new { username = Model.username})">
                 <div class="box">
                     <img src="~/images/status.png" alt="ícone de marcação" width="90" height="90">
                     <p class="sec">Status da consulta</p>
                 </div>
             </a>
 
-            <a href="@Url.Action("PacienteHistoricoConsultas", "Paciente")">
+            <a href="@Url.Action("PacienteHistoricoConsultas", "Paciente",new { username = Model.username})">
                 <div class="box">
                     <img src="~/images/historico-medico.png" alt="ícone de marcação" width="90" height="90">
                     <p class="sec">Histórico de consultas</p>

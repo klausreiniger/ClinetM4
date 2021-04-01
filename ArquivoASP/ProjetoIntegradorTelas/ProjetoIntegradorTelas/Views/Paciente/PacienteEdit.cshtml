@@ -13,11 +13,11 @@
     <header>
         <div id="header_superior">
             <h1>
-                <a href="@Url.Action("PacientePaginaInicial", new { username = Model.username})"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+                <a href="@Url.Action("PacientePaginaInicial", new { userId = Model.UserID})"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
             </h1>
 
             <div id="user">
-                <a href="@Url.Action("PacienteDadosPessoais", new { username = Model.username})">
+                <a href="@Url.Action("PacienteDadosPessoais", new { userId = Model.UserID})">
                     <img src="~/images/user.png" alt="Inscreva-se ou acesse sua conta">
                 </a>
             </div>
@@ -25,61 +25,53 @@
 
         <nav>
             <ol>
-                <li><a href="@Url.Action("PacienteMarcacao", "Paciente", new { username = Model.username})"><img src="~/images/marcar.png" width="32" height="32"> Marcação</a></li>
-                <li><a href="@Url.Action("PacienteStatus", "Paciente", new { username = Model.username})"><img src="~/images/status.png" width="32" height="32"> Status da consulta</a></li>
-                <li><a href="@Url.Action("PacienteHistoricoConsultas", "Paciente", new { username = Model.username})"><img src="~/images/historico-medico.png" width="32" height="32"> Histórico de consulta</a></li>
+                <li><a href="@Url.Action("PacienteMarcacao", "Paciente", new { userId = Model.UserID})"><img src="~/images/marcar.png" width="32" height="32"> Marcação</a></li>
+                <li><a href="@Url.Action("PacienteStatus", "Paciente", new { userId = Model.UserID})"><img src="~/images/status.png" width="32" height="32"> Status da consulta</a></li>
+                <li><a href="@Url.Action("PacienteHistoricoConsultas", "Paciente", new { userId = Model.UserID})"><img src="~/images/historico-medico.png" width="32" height="32"> Histórico de consulta</a></li>
                 <li><a href="@Url.Action("Contato", "Navegacao")"><img src="~/images/contato.png" width="32" height="32"> Contato</a></li>
             </ol>
         </nav>
     </header>
     <main>
         <section id="perfil">
-            @using (Html.BeginForm("PacienteDadosPessoais", "Paciente", FormMethod.Post, new { htmlAttributes = new { @id = "dadosP", @autocomplete = "off" } }))
+            @using (Html.BeginForm("PacienteEdit2","Paciente",FormMethod.Post, new { htmlAttributes = new { @id = "dadosP", @autocomplete = "off" } }))
             {
+
                 <div id="titulo1">
                     <img src="~/images/perfil.png">
                 </div>
 
                 <fieldset id="areaPerfil">
 
-                    <img id="trocarFT" src="~/images/foto(trocar).png" width="300" height="300"/>
+                    <img id="trocarFT" src="~/images/foto(trocar).png" width="300" height="300">
 
                     <div class="dp">
                         <label for="name"></label>
-                        @Html.HiddenFor(model => model.nomecompleto)
-                        @Html.EditorFor(model => model.nomecompleto, new { htmlAttributes = new { @class = "campo_perfil", @type = "text", @id = "name", @disabled = "disabled" } })
+                        @Html.EditorFor(model => model.nomecompleto, new { htmlAttributes = new { @class = "campo_perfil", @type = "text", @id = "name" } })
 
                         <label for="name"></label>
-                        @Html.HiddenFor(model => model.cpf)
-                        @Html.EditorFor(model => model.cpf, new { htmlAttributes = new { @class = "campo_perfil", @type = "text", @id = "name", @disabled = "disabled" } })
+                        @Html.EditorFor(model => model.cpf, new { htmlAttributes = new { @class = "campo_perfil", @type = "text", @id = "name" } })
 
                         <label for="name"></label>
-                        @Html.HiddenFor(model => model.email)
-                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "campo_perfil", @type = "text", @id = "name", @disabled = "disabled" } })
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "campo_perfil", @type = "text", @id = "name" } })
                         <a href=""><img src="~/images/edit.png" width="30" height="30"></a>
 
                         <label for="name"></label>
-                        @Html.HiddenFor(model => model.telefone)
-                        @Html.EditorFor(model => model.telefone, new { htmlAttributes = new { @class = "campo_perfil", @type = "text", @id = "name", @disabled = "disabled" } })<a><img src="~/images/edit.png" width="30" height="30"></a>
+                        @Html.EditorFor(model => model.telefone, new { htmlAttributes = new { @class = "campo_perfil", @type = "text", @id = "name" } })<a><img src="~/images/edit.png" width="30" height="30"></a>
                     </div>
 
                     <div class="dp2">
                         <label for="name"></label>
-                        @Html.HiddenFor(model => model.username)
-                        @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "campo_perfil", @type = "text", @id = "name", @disabled = "disabled" } }) <a href=""><img src="~/images/edit.png" width="30" height="30"></a>
-                        @Html.ValidationMessageFor(model => model.username, "")
+                        @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "campo_perfil", @type = "text", @id = "name" } }) <a href=""><img src="~/images/edit.png" width="30" height="30"></a>
+
                         <label for="name"></label>
-                        @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "campo_perfil", @type = "text", @id = "name", @disabled = "disabled" } }) <a href=""><img src="~/images/edit.png" width="30" height="30"></a>
+                        @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "campo_perfil", @type = "text", @id = "name" } }) <a href=""><img src="~/images/edit.png" width="30" height="30"></a>
                     </div>
-                    <a href="@Url.Action("PacienteEdit","Paciente",new { username = Model.username})"><div 
-style="
-    border: 1px solid black;
-    width: 10em;
-    height: 5em;
-    border-radius: 5px;
-    color: white;
-    margin-left: 30em;"><h3>Editar</h3></div></a>
+
+                    <button  id="salvaralter" type="submit">Editar</button>
+
                 </fieldset>
+
             }
         </section>
     </main>

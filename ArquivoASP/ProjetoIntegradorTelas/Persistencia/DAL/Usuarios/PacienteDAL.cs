@@ -20,7 +20,7 @@ namespace Persistencia.DAL.Usuarios
         }
         public Paciente SelecionarPacientePorId(long id)
         {
-            return context.Pacientes.Where(p => p.UserID == id).First();
+            return context.Pacientes.Include(p => p.UserID).Include(p => p.password).Include(p => p.username).Where(p => p.UserID == id).First();
         }
         public void GravarPaciente(Paciente paciente) {
             if (paciente.UserID == null)
