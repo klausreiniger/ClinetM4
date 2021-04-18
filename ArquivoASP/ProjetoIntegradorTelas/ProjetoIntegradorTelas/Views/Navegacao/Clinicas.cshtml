@@ -1,4 +1,4 @@
-﻿
+﻿@model IQueryable<Modelo.ComponentesClinica.Clinica>
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,213 +72,27 @@
         </section>
 
         <section id="flex_clinica">
-            <div id="clinica_info">
-                <h2>Clínica Amor e Saúde</h2>
+            @foreach(var item in Model) { 
+                <div id="clinica_info">
+                    <h2>@Html.DisplayFor(modelItem => item.nome)</h2>
 
-                <img id="clinica_foto" src="~/images/clinica (2).png" width="300" height="125">
+                    <img id="clinica_foto" src="~/images/clinica (2).png" width="300" height="125">
 
-                <div id="paragrafoClini_info">
-                    <p>
-                        <img src="~/images/whatsapp (2).png" width="32" height="32"> Funcionamento: 8:00 às 17:00
-                    </p>
+                    <div id="paragrafoClini_info">
+                        <p>
+                            <img src="~/images/whatsapp (2).png" width="32" height="32"> Funcionamento: @Html.DisplayFor(modelItem => item.inicio_expediente) às @Html.DisplayFor(modelItem => item.fim_expediente)
+                        </p>
 
-                    <p>
-                        <img src="~/images/whatsapp (3).png" width="32" height="32"> Endereço: Av. 9 de Junho, 1184
-                    </p>
+                        <p>
+                            <img src="~/images/whatsapp (3).png" width="32" height="32"> Endereço: @Html.DisplayFor(modelItem => item.endereco)
+                        </p>
 
-                    <p>
-                        <img src="~/images/whatsapp (1).png" width="32" height="32"> (84) XXXX-XXXX
-                    </p>
+                        <p>
+                            <img src="~/images/whatsapp (1).png" width="32" height="32"> @Html.DisplayFor(modelItem => item.contato_clinica)
+                        </p>
+                    </div>
                 </div>
-            </div>
-
-            <div id="clinica_info">
-                <h2>Clínica Amor e Saúde</h2>
-
-                <img id="clinica_foto" src="~/images/clinica (2).png" width="300" height="125">
-
-                <div id="paragrafoClini_info">
-                    <p>
-                        <img src="~/images/whatsapp (2).png" width="32" height="32"> Funcionamento: 8:00 às 17:00
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (3).png" width="32" height="32"> Endereço: Av. 9 de Junho, 1184
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (1).png" width="32" height="32"> (84) XXXX-XXXX
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="flex_clinica">
-            <div id="clinica_info">
-                <h2>Clínica Amor e Saúde</h2>
-
-                <img id="clinica_foto" src="~/images/clinica (2).png" width="300" height="125">
-
-                <div id="paragrafoClini_info">
-                    <p>
-                        <img src="~/images/whatsapp (2).png" width="32" height="32"> Funcionamento: 8:00 às 17:00
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (3).png" width="32" height="32"> Endereço: Av. 9 de Junho, 1184
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (1).png" width="32" height="32"> (84) XXXX-XXXX
-                    </p>
-                </div>
-            </div>
-
-            <div id="clinica_info">
-                <h2>Clínica Amor e Saúde</h2>
-
-                <img id="clinica_foto" src="~/images/clinica (2).png" width="300" height="125">
-
-                <div id="paragrafoClini_info">
-                    <p>
-                        <img src="~/images/whatsapp (2).png" width="32" height="32"> Funcionamento: 8:00 às 17:00
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (3).png" width="32" height="32"> Endereço: Av. 9 de Junho, 1184
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (1).png" width="32" height="32"> (84) XXXX-XXXX
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="flex_clinica">
-            <div id="clinica_info">
-                <h2>Clínica Amor e Saúde</h2>
-
-                <img id="clinica_foto" src="~/images/clinica (2).png" width="300" height="125">
-
-                <div id="paragrafoClini_info">
-                    <p>
-                        <img src="~/images/whatsapp (2).png" width="32" height="32"> Funcionamento: 8:00 às 17:00
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (3).png" width="32" height="32"> Endereço: Av. 9 de Junho, 1184
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (1).png" width="32" height="32"> (84) XXXX-XXXX
-                    </p>
-                </div>
-            </div>
-
-            <div id="clinica_info">
-                <h2>Clínica Amor e Saúde</h2>
-
-                <img id="clinica_foto" src="~/images/clinica (2).png" width="300" height="125">
-
-                <div id="paragrafoClini_info">
-                    <p>
-                        <img src="~/images/whatsapp (2).png" width="32" height="32"> Funcionamento: 8:00 às 17:00
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (3).png" width="32" height="32"> Endereço: Av. 9 de Junho, 1184
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (1).png" width="32" height="32"> (84) XXXX-XXXX
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="flex_clinica">
-            <div id="clinica_info">
-                <h2>Clínica Amor e Saúde</h2>
-
-                <img id="clinica_foto" src="~/images/clinica (2).png" width="300" height="125">
-
-                <div id="paragrafoClini_info">
-                    <p>
-                        <img src="~/images/whatsapp (2).png" width="32" height="32"> Funcionamento: 8:00 às 17:00
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (3).png" width="32" height="32"> Endereço: Av. 9 de Junho, 1184
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (1).png" width="32" height="32"> (84) XXXX-XXXX
-                    </p>
-                </div>
-            </div>
-
-            <div id="clinica_info">
-                <h2>Clínica Amor e Saúde</h2>
-
-                <img id="clinica_foto" src="~/images/clinica (2).png" width="300" height="125">
-
-                <div id="paragrafoClini_info">
-                    <p>
-                        <img src="~/images/whatsapp (2).png" width="32" height="32"> Funcionamento: 8:00 às 17:00
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (3).png" width="32" height="32"> Endereço: Av. 9 de Junho, 1184
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (1).png" width="32" height="32"> (84) XXXX-XXXX
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="flex_clinica">
-            <div id="clinica_info">
-                <h2>Clínica Amor e Saúde</h2>
-
-                <img id="clinica_foto" src="~/images/clinica (2).png" width="300" height="125">
-
-                <div id="paragrafoClini_info">
-                    <p>
-                        <img src="~/images/whatsapp (2).png" width="32" height="32"> Funcionamento: 8:00 às 17:00
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (3).png" width="32" height="32"> Endereço: Av. 9 de Junho, 1184
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (1).png" width="32" height="32"> (84) XXXX-XXXX
-                    </p>
-                </div>
-            </div>
-
-            <div id="clinica_info">
-                <h2>Clínica Amor e Saúde</h2>
-
-                <img id="clinica_foto" src="~/images/clinica (2).png" width="300" height="125">
-
-                <div id="paragrafoClini_info">
-                    <p>
-                        <img src="~/images/whatsapp (2).png" width="32" height="32"> Funcionamento: 8:00 às 17:00
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (3).png" width="32" height="32"> Endereço: Av. 9 de Junho, 1184
-                    </p>
-
-                    <p>
-                        <img src="~/images/whatsapp (1).png" width="32" height="32"> (84) XXXX-XXXX
-                    </p>
-                </div>
-            </div>
+            }
         </section>
     </main>
 

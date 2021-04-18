@@ -10,3 +10,15 @@ C:\Users\Rodrigo\source\repos\Clinet\ArquivoASP\ProjetoIntegradorTelas\Modelo\ob
 C:\Users\Rodrigo\source\repos\Clinet\ArquivoASP\ProjetoIntegradorTelas\Modelo\obj\Debug\Modelo.csproj.CopyComplete
 C:\Users\Rodrigo\source\repos\Clinet\ArquivoASP\ProjetoIntegradorTelas\Modelo\obj\Debug\Modelo.dll
 C:\Users\Rodrigo\source\repos\Clinet\ArquivoASP\ProjetoIntegradorTelas\Modelo\obj\Debug\Modelo.pdb
+C:\Users\Rodrigo\source\repos\ClinetM4\ArquivoASP\ProjetoIntegradorTelas\Modelo\obj\Debug\Modelo.csprojAssemblyReference.cache
+C:\Users\Rodrigo\source\repos\ClinetM4\ArquivoASP\ProjetoIntegradorTelas\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo\source\repos\ClinetM4\ArquivoASP\ProjetoIntegradorTelas\Modelo\obj\Debug\Modelo.dll
+C:\Users\Rodrigo\source\repos\ClinetM4\ArquivoASP\ProjetoIntegradorTelas\Modelo\obj\Debug\Modelo.pdb
+C:\Users\Rodrigo\source\repos\ClinetM4\ArquivoASP\ProjetoIntegradorTelas\Modelo\bin\Debug\Modelo.dll.config
+C:\Users\Rodrigo\source\repos\ClinetM4\ArquivoASP\ProjetoIntegradorTelas\Modelo\bin\Debug\Modelo.dll
+C:\Users\Rodrigo\source\repos\ClinetM4\ArquivoASP\ProjetoIntegradorTelas\Modelo\bin\Debug\Modelo.pdb
+C:\Users\Rodrigo\source\repos\ClinetM4\ArquivoASP\ProjetoIntegradorTelas\Modelo\bin\Debug\EntityFramework.dll
+C:\Users\Rodrigo\source\repos\ClinetM4\ArquivoASP\ProjetoIntegradorTelas\Modelo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Rodrigo\source\repos\ClinetM4\ArquivoASP\ProjetoIntegradorTelas\Modelo\bin\Debug\EntityFramework.xml
+C:\Users\Rodrigo\source\repos\ClinetM4\ArquivoASP\ProjetoIntegradorTelas\Modelo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Rodrigo\source\repos\ClinetM4\ArquivoASP\ProjetoIntegradorTelas\Modelo\obj\Debug\Modelo.csproj.CopyComplete

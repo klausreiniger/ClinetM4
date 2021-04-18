@@ -198,6 +198,7 @@
     <Content Include="Views\Navegacao\Contato.cshtml" />
     <Content Include="Views\SecretariaAcoes\EditMedico.cshtml" />
     <Content Include="Views\Paciente\PacienteEdit.cshtml" />
+    <Content Include="Views\SecretariaAcoes\SecretariaCadastro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

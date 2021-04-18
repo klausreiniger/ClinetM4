@@ -48,14 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Acesso\RegistroUsuario.cs" />
+    <Compile Include="ComponentesClinica\Clinica.cs" />
+    <Compile Include="ComponentesClinica\HorarioDisponivel.cs" />
     <Compile Include="Mensagens\FormularioContato.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Acesso\Login.cs" />
     <Compile Include="Usuarios\Medico.cs" />
-    <Compile Include="Usuarios\MedicoV2.cs" />
     <Compile Include="Usuarios\Paciente.cs" />
-    <Compile Include="Usuarios\PacienteV2.cs" />
+    <Compile Include="Usuarios\Secretaria.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

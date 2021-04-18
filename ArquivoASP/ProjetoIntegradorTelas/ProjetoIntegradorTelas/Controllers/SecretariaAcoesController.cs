@@ -6,13 +6,52 @@ using System.Net;
 using System.Web.Mvc;
 using Modelo.Usuarios;
 using Servico.Usuarios;
+using Modelo.ComponentesClinica;
+using Servico.ComponentesClinicas;
 
 namespace ProjetoIntegradorTelas.Controllers
 {
     public class SecretariaAcoesController : Controller
     {
         private MedicoServico medicoServico = new MedicoServico();
+        private ClinicaServico clinicaServico = new ClinicaServico();
+        private SecretariaServico secretariaServico = new SecretariaServico();
         // GET: SecretariaAcoes
+        public ActionResult SecretariaCadastro() {
+
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SecretariaCadastro(Secretaria secretaria) {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    secretariaServico.GravarSecretaria(secretaria);
+                }
+                catch
+                {
+                    return View(secretaria);
+                }
+            }
+            else
+            {
+                return View(secretaria);
+            }
+            return RedirectToAction("Index", "Navegacao");
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LogSecretaria(Secretaria secretaria) {
+            bool valid = secretariaServico.ValidarSecretaria(secretaria);
+            if (valid)
+            {
+                Secretaria secretaria_ = secretariaServico.ObterSecretariaPorUsername(secretaria.username);
+                return RedirectToAction("SecretariaPaginaInicial", "SecretariaAcoes", new { username = secretaria_.username });
+            }
+            else return RedirectToAction("SecretariaCadastro", "SecretariaAcoes");
+        }
         public ActionResult GravarMedico(Medico medico) {
             try
             {

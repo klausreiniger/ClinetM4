@@ -9,16 +9,21 @@ using Modelo.ComponentesClinica;
 
 namespace Modelo.Usuarios
 {
-    public class Medico
+    public class Secretaria
     {
         [Key]
-        public long? medicoID { get; set; }
-        public int CRM { get; set; }
+        public long? secretariaID { get; set; }
         public string nome { get; set; }
-        public string especialidade { get; set; }
+        public string email { get; set; }
+        public string cpf { get; set; }
+        public string provclinica { get; set; }
+        public string rg { get; set; }
         public string telefone { get; set; }
+        public DateTime datanasc { get; set; }
+        [ForeignKey("Clinica")]
+        public long? clinicaID { get; set; }
+        public Clinica Clinica { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-        public virtual ICollection<HorarioDisponivel> HorariosDisponiveis { get; set; }
     }
 }

@@ -49,9 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexts\EFContext.cs" />
+    <Compile Include="DAL\ComponentesClinica\ClinicaDAL.cs" />
+    <Compile Include="DAL\ComponentesClinica\HorarioDisponivelDAL.cs" />
     <Compile Include="DAL\Mensagens\FormularioContatoDAL.cs" />
     <Compile Include="DAL\Usuarios\MedicoDAL.cs" />
     <Compile Include="DAL\Usuarios\PacienteDAL.cs" />
+    <Compile Include="DAL\Usuarios\SecretariaDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

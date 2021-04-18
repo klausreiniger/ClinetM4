@@ -16,12 +16,15 @@ using System.Runtime.Versioning;
 using System.Security;
 using System.Security.Permissions;
 using System.Diagnostics.Contracts;
+using Modelo.ComponentesClinica;
+using Servico.ComponentesClinicas;
 
 namespace ProjetoIntegradorTelas.Controllers
 {
     public class NavegacaoController : Controller
     {
         private FormularioContatoServico formularioContatoServico = new FormularioContatoServico();
+        private ClinicaServico clinicaServico = new ClinicaServico();
         public ActionResult Index()
         {
             return View();
@@ -52,7 +55,8 @@ namespace ProjetoIntegradorTelas.Controllers
         }
         public ActionResult Clinicas()
         {
-            return View();
+            
+            return View(clinicaServico.DisplayClinicas());
         }
 
         public ActionResult MedicoPaginaInicial()

@@ -41,10 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComponentesClinicas\ClinicaServico.cs" />
+    <Compile Include="ComponentesClinicas\HorarioDisponivelServico.cs" />
     <Compile Include="Mensagens\FormularioContatoServico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios\MedicoServico.cs" />
     <Compile Include="Usuarios\PacienteServico.cs" />
+    <Compile Include="Usuarios\SecretariaServico.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modelo\Modelo.csproj">
