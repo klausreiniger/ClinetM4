@@ -18,7 +18,7 @@ namespace ProjetoIntegradorTelas.Controllers
         private SecretariaServico secretariaServico = new SecretariaServico();
         // GET: SecretariaAcoes
         public ActionResult SecretariaCadastro() {
-
+            ViewBag.ClinicaID = new SelectList(clinicaServico.DisplayClinicasPorNome(), "ClinicaID", "nome");
             return View();
         }
         [HttpPost]
@@ -52,64 +52,109 @@ namespace ProjetoIntegradorTelas.Controllers
             }
             else return RedirectToAction("SecretariaCadastro", "SecretariaAcoes");
         }
-        public ActionResult GravarMedico(Medico medico) {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    medicoServico.GravarMedico(medico);
-                    return RedirectToAction("SecretariaPaginaInicial", "SecretariaAcoes");
-                }
-                return View(medico);
-            }
-            catch {
-                return View(medico);
-            }
-        }
-        public ActionResult ListarMedico()
+        public ActionResult ListarMedico(string username)
         {
+            TempData["this_secretaria_nome"] = secretariaServico.ObterSecretariaPorUsername(username).nome;
+            TempData["this_secretaria_username"] = username;
             return View(medicoServico.ObterMedicosOrdenadosPorNome());
         }
-        public ActionResult CadastrarMedico()
+        public ActionResult CadastrarMedico(string username)
         {
+            TempData["this_secretaria_nome"] = secretariaServico.ObterSecretariaPorUsername(username).nome;
+            TempData["this_secretaria_username"] = username;
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CadastrarMedico(Medico medico)
         {
-            return GravarMedico(medico);
+            TempData.Keep();
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    medicoServico.GravarMedico(medico);
+                    return RedirectToAction("SecretariaPaginaInicial", "SecretariaAcoes", new { username = TempData["this_secretaria_username"]});
+                }
+                return View(medico);
+            }
+            catch
+            {
+                return View(medico);
+            }
         }
-        public ActionResult CRUDMedicoReduzido(long? id)
+        public ActionResult CRUDMedicoReduzido(string username, long? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             Medico medico = medicoServico.ObterMedicoPorId((long)id);
             if (medico == null) return HttpNotFound();
+            TempData["this_secretaria_nome"] = secretariaServico.ObterSecretariaPorUsername(username).nome;
+            TempData["this_secretaria_username"] = username;
             return View(medico);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AtualizarMedico(Medico medico)
+        public ActionResult AtualizarMedico(string username, Medico medico)
         {
-            return GravarMedico(medico);
+            TempData["this_secretaria_nome"] = secretariaServico.ObterSecretariaPorUsername(username).nome;
+            TempData["this_secretaria_username"] = username;
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    medicoServico.GravarMedico(medico);
+                    return RedirectToAction("SecretariaPaginaInicial", "SecretariaAcoes", new { username = username});
+                }
+                return View(medico);
+            }
+            catch
+            {
+                return View(medico);
+            }
         }
-        public ActionResult EditMedico(long? id) {
+        public ActionResult EditMedico(string username,long? id) {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             Medico medico = medicoServico.ObterMedicoPorId((long)id);
             if (medico == null) return HttpNotFound();
+            TempData["this_secretaria_nome"] = secretariaServico.ObterSecretariaPorUsername(username).nome;
+            TempData["this_secretaria_username"] = username;
             return View(medico);
         }
-        public ActionResult ApagarMedico(long? id)
+        public ActionResult ApagarMedico(string username,long? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             Medico medico = medicoServico.ObterMedicoPorId((long)id);
             if (medico == null) return HttpNotFound();
             medicoServico.DeletarMedico((long)id);
-            return RedirectToAction("SecretariaPaginaInicial", "SecretariaAcoes");
+            return RedirectToAction("SecretariaPaginaInicial", "SecretariaAcoes", new { username = username });
         }
-        public ActionResult SecretariaPaginaInicial()
+        public ActionResult SecretariaPaginaInicial(string username)
         {
-            return View();
+            Secretaria secretaria_ = secretariaServico.ObterSecretariaPorUsername(username);
+            return View(secretaria_);
+        }
+        public ActionResult SecretariaDadosPessoais(string username) {
+            Secretaria secretaria_ = secretariaServico.ObterSecretariaPorUsername(username);
+            return View(secretaria_);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SecretariaDadosPessoais(Secretaria secretaria) {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    secretariaServico.GravarSecretaria(secretaria);
+                    return RedirectToAction("SecretariaPaginaInicial", "SecretariaAcoes", new { username = secretaria.username });
+                }
+                catch
+                {
+                    return View(secretaria);
+                }
+            }
+            else {
+                return View(secretaria);
+            }
         }
     }
 }

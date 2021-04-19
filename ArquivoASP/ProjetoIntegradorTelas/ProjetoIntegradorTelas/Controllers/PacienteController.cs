@@ -5,12 +5,16 @@ using System.Web;
 using System.Web.Mvc;
 using Modelo.Usuarios;
 using Servico.Usuarios;
+using Servico.ComponentesClinicas;
+using Modelo.ComponentesClinica;
 
 namespace ProjetoIntegradorTelas.Controllers
 {
     public class PacienteController : Controller
     {
         private PacienteServico pacienteServico = new PacienteServico();
+        private ClinicaServico clinicaServico = new ClinicaServico();
+        private AgendamentoServico agendamentoServico = new AgendamentoServico();
         // GET: PacienteLoginCadastro
         public ActionResult LoginCadastroPaciente()
         {
@@ -77,8 +81,21 @@ namespace ProjetoIntegradorTelas.Controllers
 
         public ActionResult PacienteMarcacao(string  username)
         {
+            TempData["paciente_user"] = username;
+            TempData.Keep();
+            IEnumerable<Clinica> clinicas = clinicaServico.DisplayClinicasPorNome();
+            return View(clinicas);
+        }
+        public ActionResult PacienteMarcacaoStep2(string username, long? clinicaID) {
+            Agendamento agendamento = new Agendamento();
             Paciente paciente = pacienteServico.ObterPacientePorUsername(username);
-            return View(paciente);
+            Clinica clinica = clinicaServico.ObterClinicaPorID((long)clinicaID);
+            agendamento.PacienteID = paciente.UserID;
+            agendamento.ClinicaID = clinica.ClinicaID;
+            agendamento.confirmada = false;
+            agendamento.finalizada = false;
+            TempData["horarios"]
+            return RedirectToAction("Index", "Navegacao");
         }
         public ActionResult PacienteHistoricoConsultas(string username)
         {

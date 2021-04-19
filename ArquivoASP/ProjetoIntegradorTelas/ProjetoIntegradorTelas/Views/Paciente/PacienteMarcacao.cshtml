@@ -1,4 +1,4 @@
-﻿@model Modelo.Usuarios.Paciente
+﻿@model IEnumerable<Modelo.ComponentesClinica.Clinica>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,12 +13,12 @@
     <header>
         <div id="header_superior">
             <h1>
-                <a href="@Url.Action("PacientePaginaInicial", "Paciente",new { username = Model.username})"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+                <a href="@Url.Action("PacientePaginaInicial", "Paciente",new { username = TempData["paciente_username"]})"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
             </h1>
 
 
             <div id="user">
-                <a href="@Url.Action("PacienteDadosPessoais", "Paciente",new { username = Model.username})">
+                <a href="@Url.Action("PacienteDadosPessoais", "Paciente",new { username = TempData["paciente_username"]})">
                     <img src="~/images/user.png" alt="Inscreva-se ou acesse sua conta">
                 </a>
             </div>
@@ -26,9 +26,9 @@
 
         <nav>
             <ol>
-                <li><a href="@Url.Action("PacienteMarcacao", "Paciente",new { username = Model.username})"><img src="~/images/marcar.png" width="32" height="32"> Marcação</a></li>
-                <li><a href="@Url.Action("PacienteStatus", "Paciente",new { username = Model.username})"><img src="~/images/status.png" width="32" height="32"> Status da consulta</a></li>
-                <li><a href="@Url.Action("PacienteHistoricoConsultas", "Paciente",new { username = Model.username})"><img src="~/images/historico-medico.png" width="32" height="32"> Histórico de consulta</a></li>
+                <li><a href="@Url.Action("PacienteMarcacao", "Paciente",new { username = TempData["paciente_username"]})"><img src="~/images/marcar.png" width="32" height="32"> Marcação</a></li>
+                <li><a href="@Url.Action("PacienteStatus", "Paciente",new { username = TempData["paciente_username"]})"><img src="~/images/status.png" width="32" height="32"> Status da consulta</a></li>
+                <li><a href="@Url.Action("PacienteHistoricoConsultas", "Paciente",new { username = TempData["paciente_username"]})"><img src="~/images/historico-medico.png" width="32" height="32"> Histórico de consulta</a></li>
                 <li><a href="@Url.Action("Contato", "Navegacao")"><img src="~/images/contato.png" width="32" height="32"> Contato</a></li>
             </ol>
         </nav>
@@ -39,36 +39,31 @@
             <h1>Selecionar clínica</h1>
         </div>
 
-        <section class="marcar">
-            <form id="selectMarcar" autocomplete="off">
+        <section id="flex_clinica">
+            @foreach (var item in Model)
+            {
+                <a href="@Url.Action("PacienteMarcacaoStep2","PacienteController",new { username = TempData["paciente_username"], clinicaID = item.ClinicaID})">
+                <div id="clinica_info">
+                    <h2>@Html.DisplayFor(modelItem => item.nome)</h2>
 
-                <fieldset id="areaMarcar">
+                    <img id="clinica_foto" src="~/images/clinica (2).png" width="300" height="125">
 
-                    <div class="mc">
-                        <label for="name"></label>
-                        <input class="campo_selecionarC1" type="text" id="name" placeholder="Estado">
+                    <div id="paragrafoClini_info">
+                        <p>
+                            <img src="~/images/whatsapp (2).png" width="32" height="32"> Funcionamento: @Html.DisplayFor(modelItem => item.inicio_expediente) às @Html.DisplayFor(modelItem => item.fim_expediente)
+                        </p>
 
-                        <label for="name"></label>
-                        <input class="campo_selecionarC" type="text" id="name" placeholder="Cidade">
+                        <p>
+                            <img src="~/images/whatsapp (3).png" width="32" height="32"> Endereço: @Html.DisplayFor(modelItem => item.endereco)
+                        </p>
+
+                        <p>
+                            <img src="~/images/whatsapp (1).png" width="32" height="32"> @Html.DisplayFor(modelItem => item.contato_clinica)
+                        </p>
                     </div>
-
-                    <div class="mc2">
-                        <label for="name">Especialidade:</label>
-                        <select class="listaE" name="especialidade">
-                            <option>Cardiologia</option>
-                            <option>Neurologia</option>
-                            <option>Ortopedia</option>
-                        </select>
-
-                        <label for="name">Clínica:</label>
-                        <select class="listaC" name="clinica">
-                            <option>Amor e Saúde</option>
-                            <option>Amor e Saúde</option>
-                            <option>Amor e Saúde</option>
-                        </select>
-                    </div>
-                </fieldset>
-            </form>
+                </div>
+                </a>
+            }
         </section>
 
         <div class="tit">
@@ -96,28 +91,6 @@
                             <option>11h30</option>
                         </select>
                     </div>
-                </fieldset>
-            </form>
-        </section>
-
-        <div class="tit">
-            <img src="~/images/numero3.png" width="50" height="50">
-            <h1>Contato</h1>
-        </div>
-
-        <section class="marcar2">
-            <form id="selectMarcar" autocomplete="off">
-
-                <fieldset id="areaMarcar">
-
-                    <div class="mc3">
-                        <label for="name">Email:</label>
-                        <input class="campo_selecionarC3" type="text" id="name" placeholder="">
-
-                        <label for="name">Tel:</label>
-                        <input class="campo_selecionarC4" type="text" id="name" placeholder="">
-                    </div>
-
                 </fieldset>
             </form>
         </section>

@@ -19,7 +19,7 @@ namespace Modelo.ComponentesClinica
         [Required]
         public DateTime horario { get; set; }
         [ForeignKey("Clinica")]
-        public long? clinicaID { get; set; }
+        public long? ClinicaID { get; set; }
         public Clinica Clinica { get; set; }
     }
 }

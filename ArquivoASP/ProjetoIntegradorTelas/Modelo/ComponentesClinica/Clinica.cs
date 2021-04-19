@@ -12,7 +12,7 @@ namespace Modelo.ComponentesClinica
     public class Clinica
     {
         [Key]
-        public long? clinicaID { get; set; }
+        public long? ClinicaID { get; set; }
         public string nome { get; set; }
         public string inicio_expediente { get; set; }
         public string fim_expediente { get; set; }

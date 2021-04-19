@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComponentesClinica\Agendamento.cs" />
     <Compile Include="ComponentesClinica\Clinica.cs" />
     <Compile Include="ComponentesClinica\HorarioDisponivel.cs" />
     <Compile Include="Mensagens\FormularioContato.cs" />

@@ -18,7 +18,7 @@ namespace Persistencia.DAL.Usuarios
             return context.Secretarias.OrderBy(s => s.nome);
         }
         public IQueryable<Secretaria> ObterSecretariasEmClinica(long id) {
-            return context.Secretarias.Where(s => s.clinicaID == id);
+            return context.Secretarias.Where(s => s.ClinicaID == id);
         }
         public Secretaria ObterSecretariaPorId(long id)
         {

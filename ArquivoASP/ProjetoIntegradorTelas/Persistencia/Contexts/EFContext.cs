@@ -22,6 +22,7 @@ namespace Persistencia.Contexts
         public DbSet<FormularioContato> FormulariosContato { get; set; }
         public DbSet<HorarioDisponivel> HorariosDisponiveis { get; set; }
         public DbSet<Clinica> Clinicas { get; set; }
+        public DbSet<Agendamento> Agendamentos { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

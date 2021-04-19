@@ -21,7 +21,7 @@ namespace Modelo.Usuarios
         public string telefone { get; set; }
         public DateTime datanasc { get; set; }
         [ForeignKey("Clinica")]
-        public long? clinicaID { get; set; }
+        public long? ClinicaID { get; set; }
         public Clinica Clinica { get; set; }
         public string username { get; set; }
         public string password { get; set; }

@@ -19,8 +19,12 @@ namespace Servico.ComponentesClinicas
         {
             clinicaDAL.GravarClinica(clinica);
         }
-        public IQueryable<Clinica> DisplayClinicas() {
+        public IEnumerable<Clinica> DisplayClinicas() {
             return clinicaDAL.DisplayClinicas();
+        }
+        public IEnumerable<Clinica> DisplayClinicasPorNome()
+        {
+            return clinicaDAL.DisplayClinicasPorNome();
         }
         public Clinica DeletarClinica(long id)
         {

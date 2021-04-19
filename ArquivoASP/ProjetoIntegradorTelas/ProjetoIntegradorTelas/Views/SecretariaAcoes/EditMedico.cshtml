@@ -2,6 +2,7 @@
 
 @{
     Layout = null;
+    TempData.Keep();
 }
 <!DOCTYPE html>
 <html>
@@ -18,11 +19,14 @@
     <header>
         <div id="header_superior">
             <h1>
-                <a href="@Url.Action("SecretariaPaginaInicial", "SecretariaAcoes")"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
+                <a href="@Url.Action("SecretariaPaginaInicial", "SecretariaAcoes", new { username = TempData["this_secretaria_username"]})"><img src="~/images/logo_footer.png" width="64" height="64" alt="Logotipo da Clinet">Clinet</a>
             </h1>
-
-            <div id="user">
-                <a href="@Url.Action("SecretariaDadosPessoais", "SecretariaAcoes")">
+            <div id="user" style=" display: flex; flex-wrap: nowrap; justify-content: space-between; flex-direction: row; color: white; font-family: 'Playfair Display', serif; margin-right: 60px;">
+                <div id="userinfo" style="margin-left: -50px; width: 20em;">
+                    <h4>@TempData["this_secretaria_nome"]</h4>
+                    <h6><a href="@Url.Action("SecretariaDadosPessoais","SecretariaAcoes",new { username = TempData["this_secretaria_username"]})" style="color:white;">Editar Dados</a></h6>
+                </div>
+                <a href="@Url.Action("SecretariaDadosPessoais", "SecretariaAcoes",new { username = TempData["this_secretaria_username"]})">
                     <img src="~/images/user.png" alt="Inscreva-se ou acesse sua conta">
                 </a>
 
@@ -33,7 +37,7 @@
             <ol>
                 <li><a href="@Url.Action("SecretariaCadastrarClinica", "SecretariaAcoes")"><img src="~/images/clinica.png" width="32" height="32"> Clínicas</a></li>
                 <li><a href="@Url.Action("SecretariaAgendamento", "SecretariaAcoes")"><img src="~/images/caderno.png" width="32" height="32"> Agendamentos</a></li>
-                <li><a href="@Url.Action("ListarMedico", "SecretariaAcoes")"><img src="~/images/doctor.png" width="32" height="32"> Médicos</a></li>
+                <li><a href="@Url.Action("ListarMedico", "SecretariaAcoes",new { username = TempData["this_secretaria_username"]})"><img src="~/images/doctor.png" width="32" height="32"> Médicos</a></li>
                 <li><a href="@Url.Action("SecretariaHorarios", "SecretariaAcoes")"><img src="~/images/clock.png" width="32" height="32"> Horários</a></li>
                 <li><a href="@Url.Action("Contato", "Navegacao")"><img src="~/images/contato.png" width="32" height="32"> Contato</a></li>
             </ol>
@@ -83,7 +87,7 @@
                     </div>
                     <div id="botoescrudmedico" style="width: 17em;display: flex;margin-left: 3.25em;margin-top: -14em;">
                         <button type="submit" style="width: 115px;">Atualizar</button>
-                        <a href="@Url.Action("ApagarMedico", "SecretariaAcoes", new { id = Model.medicoID})">
+                        <a href="@Url.Action("ApagarMedico", "SecretariaAcoes", new { id = Model.medicoID, username = TempData["this_secretaria_username"]})">
                             <div id="envcadprototype" style="margin-top: 10px;">
                                 <h5 style="font-size: 16px;">Deletar</h5>
                             </div>

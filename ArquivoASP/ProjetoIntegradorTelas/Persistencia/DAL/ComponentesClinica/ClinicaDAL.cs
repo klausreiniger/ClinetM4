@@ -12,16 +12,19 @@ namespace Persistencia.DAL.ComponentesClinica
     public class ClinicaDAL
     {
         private EFContext context = new EFContext();
-        public IQueryable<Clinica> DisplayClinicas() {
-            return context.Clinicas;
+        public IEnumerable<Clinica> DisplayClinicas() {
+            return context.Clinicas.ToList();
+        }
+        public IEnumerable<Clinica> DisplayClinicasPorNome() {
+            return context.Clinicas.OrderBy(c => c.nome);
         }
         public Clinica ObterClinicaPorID(long id)
         {
-            return context.Clinicas.Where(c => c.clinicaID == id).First();
+            return context.Clinicas.Where(c => c.ClinicaID == id).First();
         }
         public void GravarClinica(Clinica clinica)
         {
-            if (clinica.clinicaID == null) context.Clinicas.Add(clinica);
+            if (clinica.ClinicaID == null) context.Clinicas.Add(clinica);
             else context.Entry(clinica).State = EntityState.Modified;
             context.SaveChanges();
         }
