@@ -14,13 +14,13 @@ namespace Modelo.ComponentesClinica
         [Key]
         public long? HorarioDisponivelID { get; set; }
         [ForeignKey("Medico")]
-        public long? medicoID { get; set; }
+        public long? MedicoID { get; set; }
         public Medico Medico { get; set; }
         [Required]
         public DateTime horario { get; set; }
         [ForeignKey("Clinica")]
         public long? ClinicaID { get; set; }
         public Clinica Clinica { get; set; }
-        public Agendamento Agendamento { get; set; }
+        public ICollection<Agendamento> Agendamento { get; set; }
     }
 }

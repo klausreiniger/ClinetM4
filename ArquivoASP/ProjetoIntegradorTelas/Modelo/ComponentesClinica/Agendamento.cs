@@ -24,8 +24,8 @@ namespace Modelo.ComponentesClinica
         public long? MedicoID { get; set; }
         public Medico Medico { get; set; }
         [ForeignKey("HorarioDisponivel")]
-        public HorarioDisponivel HorarioDisponivelID {get;set;}
-        public HorarioDisponivel HorarioDisponivel{get;set;}
+        public long? HorarioDisponivelID { get; set; }
+        public HorarioDisponivel HorarioDisponivel { get; set; }
         public bool confirmada { get; set; }
         public bool finalizada { get; set; }
     }

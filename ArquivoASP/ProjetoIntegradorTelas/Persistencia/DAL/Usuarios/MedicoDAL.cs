@@ -17,8 +17,8 @@ namespace Persistencia.DAL.Usuarios
             return context.Medicos.OrderBy(m => m.nome);
         }
         public IQueryable<Medico> ObterMedicosDisponiveisEmClinica(long id) { 
-            IQueryable<HorarioDisponivel> poshs = context.HorariosDisponiveis.Where(h => h.ClinicaID == id).Include(h => h.medicoID).OrderBy(h => h.horario);
-            IQueryable<Medico> medids = (from item in poshs select ObterMedicoPorId((long)item.medicoID)).Distinct();
+            IQueryable<HorarioDisponivel> poshs = context.HorariosDisponiveis.Where(h => h.ClinicaID == id).Include(h => h.MedicoID).OrderBy(h => h.horario);
+            IQueryable<Medico> medids = (from item in poshs select ObterMedicoPorId((long)item.MedicoID)).Distinct();
             return medids;
         }
         public Medico ObterMedicoPorId(long id) {

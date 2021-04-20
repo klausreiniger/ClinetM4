@@ -16,10 +16,10 @@ namespace Persistencia.DAL.ComponentesClinica
             return context.HorariosDisponiveis.Where(h => h.HorarioDisponivelID == id).First();
         }
         public IQueryable<HorarioDisponivel> ObterHorariosPorMedico(long id) {
-            return context.HorariosDisponiveis.Where(h => h.medicoID == id).Include(h => h.ClinicaID);
+            return context.HorariosDisponiveis.Where(h => h.MedicoID == id).Include(h => h.ClinicaID);
         }
         public IQueryable<HorarioDisponivel> ObterHorariosPorClinica(long id) {
-            return context.HorariosDisponiveis.Where(h => h.ClinicaID == id).Include(h => h.medicoID).OrderBy(h => h.horario);
+            return context.HorariosDisponiveis.Where(h => h.ClinicaID == id).Include(h => h.MedicoID).OrderBy(h => h.horario);
         }
         public void GravarHorarioDisponivel(HorarioDisponivel horariodisponivel) {
             if (horariodisponivel.HorarioDisponivelID == null) context.HorariosDisponiveis.Add(horariodisponivel);

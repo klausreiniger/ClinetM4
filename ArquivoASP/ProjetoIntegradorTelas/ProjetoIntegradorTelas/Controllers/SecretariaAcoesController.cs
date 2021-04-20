@@ -19,7 +19,7 @@ namespace ProjetoIntegradorTelas.Controllers
         // GET: SecretariaAcoes
         public ActionResult SecretariaCadastro() {
             Secretaria secretaria = new Secretaria();
-            ViewBag.ClinicaID = new SelectList(clinicaServico.DisplayClinicasPorNome(), "ClinicaID", "nome", secretaria.ClinicaID);
+            ViewBag.Clinicas = new SelectList(clinicaServico.DisplayClinicasPorNome(), "ClinicaID", "nome", secretaria.ClinicaID);
             return View();
         }
         [HttpPost]
@@ -43,7 +43,6 @@ namespace ProjetoIntegradorTelas.Controllers
             return RedirectToAction("Index", "Navegacao");
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult LogSecretaria(Secretaria secretaria) {
             bool valid = secretariaServico.ValidarSecretaria(secretaria);
             if (valid)
