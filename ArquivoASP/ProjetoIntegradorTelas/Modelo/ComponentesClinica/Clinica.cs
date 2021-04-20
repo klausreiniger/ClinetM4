@@ -22,5 +22,6 @@ namespace Modelo.ComponentesClinica
         public string endereco { get; set; }
         public virtual ICollection<HorarioDisponivel> HorariosDisponiveis { get; set; }
         public virtual ICollection<Secretaria> Secretarias { get; set; }
+        public virtual ICollection<Agendamento> Agendamentos { get; set; }
     }
 }

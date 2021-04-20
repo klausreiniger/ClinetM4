@@ -11,11 +11,11 @@ namespace Servico.Usuarios
     public class SecretariaServico
     {
         private SecretariaDAL secretariaDAL = new SecretariaDAL();
-        public IQueryable<Secretaria> ObterSecretariaOrdenadasPorNome()
+        public IEnumerable<Secretaria> ObterSecretariaOrdenadasPorNome()
         {
             return secretariaDAL.ObterSecretariaOrdenadasPorNome();
         }
-        public IQueryable<Secretaria> ObterSecretariasEmClinica(long id)
+        public IEnumerable<Secretaria> ObterSecretariasEmClinica(long id)
         {
             return secretariaDAL.ObterSecretariasEmClinica(id);
         }

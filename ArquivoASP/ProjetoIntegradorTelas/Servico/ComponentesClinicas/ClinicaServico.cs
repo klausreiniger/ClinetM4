@@ -22,7 +22,7 @@ namespace Servico.ComponentesClinicas
         public IEnumerable<Clinica> DisplayClinicas() {
             return clinicaDAL.DisplayClinicas();
         }
-        public IEnumerable<Clinica> DisplayClinicasPorNome()
+        public IQueryable<Clinica> DisplayClinicasPorNome()
         {
             return clinicaDAL.DisplayClinicasPorNome();
         }

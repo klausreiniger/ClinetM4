@@ -27,10 +27,6 @@ namespace Servico.ComponentesClinicas
         {
             return agendamentoDAL.ObterAgendamentosPorPaciente(id);
         }
-        public IEnumerable<Agendamento> DisplayAgendamentosPorHorarioConsulta()
-        {
-            return agendamentoDAL.DisplayAgendamentosPorHorarioConsulta();
-        }
         public Agendamento ObterAgendamentoPorID(long id)
         {
             return agendamentoDAL.ObterAgendamentoPorID(id);

@@ -1,15 +1,11 @@
-﻿@model IEnumerable<Modelo.ComponentesClinica.Clinica>
-
-@{ 
-    TempData.Keep();
-}
-
+﻿@model Modelo.ComponentesClinica.Agendamento
 <!DOCTYPE html>
 <html>
 <head>
     <title>Clinet: Paciente - Marcar consulta</title>
     <link rel="icon" href="~/images/logo_footer.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="~/Style/principal.css">
     <link rel="stylesheet" type="text/css" href="~/Style/index.css">
 </head>
@@ -39,37 +35,29 @@
         </nav>
     </header>
     <main>
-        <div class="tit">
-            <img src="~/images/numero1.png" width="50" height="50">
-            <h1>Selecionar clínica</h1>
+       <div class="tit">
+            <img src="~/images/numero2.png" width="50" height="50">
+            <h1>Selecionar médico</h1>
         </div>
 
-        <section id="flex_clinica">
-            @foreach (var item in Model)
-            {
-                <a href="@Url.Action("PacienteMarcacaoStep2","Paciente",new { username = TempData["paciente_username"], clinicaID = item.ClinicaID})">
-                    <div id="clinica_info">
-                        <h2>@Html.DisplayFor(modelItem => item.nome)</h2>
+        <section class="marcar2">
+            <form id="selectMarcar" autocomplete="off">
 
-                        <img id="clinica_foto" src="~/images/clinica (2).png" width="300" height="125">
+                <fieldset id="areaMarcar">
 
-                        <div id="paragrafoClini_info">
-                            <p>
-                                <img src="~/images/whatsapp (2).png" width="32" height="32"> Funcionamento: @Html.DisplayFor(modelItem => item.inicio_expediente) às @Html.DisplayFor(modelItem => item.fim_expediente)
-                            </p>
-
-                            <p>
-                                <img src="~/images/whatsapp (3).png" width="32" height="32"> Endereço: @Html.DisplayFor(modelItem => item.endereco)
-                            </p>
-
-                            <p>
-                                <img src="~/images/whatsapp (1).png" width="32" height="32"> @Html.DisplayFor(modelItem => item.contato_clinica)
-                            </p>
-                        </div>
+                    <div class="mc2">
+                        <label for="name">Médico:</label>
+                        @Html.DropDownList("MedicoID", null, new { htmlAttributes = new { @class = "form-select form-select-sm" } })
+                        @Html.ValidationMessageFor(model => model.MedicoID, "", new { @class = "text-danger" })
                     </div>
-                </a>
-            }
+                </fieldset>
+            </form>
         </section>
+
+        <div class="buttonM">
+            <button id="bmarcar" type="submit">Marcar</button>
+        </div>
+    </main>
 
     <footer>
         <div id="display_footer">

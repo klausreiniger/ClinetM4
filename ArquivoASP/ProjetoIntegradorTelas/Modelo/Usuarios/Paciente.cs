@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Modelo.ComponentesClinica;
 
 namespace Modelo.Usuarios
 {
@@ -20,5 +21,6 @@ namespace Modelo.Usuarios
         public string email { get; set; }
         public string username { get; set; }
         public string password { get; set; }
+        public virtual ICollection<Agendamento> Agendamentos { get; set; }
     }
 }

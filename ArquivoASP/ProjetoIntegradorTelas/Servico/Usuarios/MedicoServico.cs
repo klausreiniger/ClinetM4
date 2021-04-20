@@ -15,6 +15,9 @@ namespace Servico.Usuarios
         {
             return medicoDAL.ObterMedicosOrdenadosPorNome();
         }
+        public IQueryable<Medico> ObterMedicosDisponiveisEmClinica(long id) {
+            return medicoDAL.ObterMedicosDisponiveisEmClinica(id);
+        }
         public Medico ObterMedicoPorId(long id)
         {
             return medicoDAL.ObterMedicoPorId(id);

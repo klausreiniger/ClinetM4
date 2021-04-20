@@ -13,11 +13,11 @@ namespace Persistencia.DAL.Usuarios
     public class SecretariaDAL
     {
         private EFContext context = new EFContext();
-        public IQueryable<Secretaria> ObterSecretariaOrdenadasPorNome()
+        public IEnumerable<Secretaria> ObterSecretariaOrdenadasPorNome()
         {
             return context.Secretarias.OrderBy(s => s.nome);
         }
-        public IQueryable<Secretaria> ObterSecretariasEmClinica(long id) {
+        public IEnumerable<Secretaria> ObterSecretariasEmClinica(long id) {
             return context.Secretarias.Where(s => s.ClinicaID == id);
         }
         public Secretaria ObterSecretariaPorId(long id)

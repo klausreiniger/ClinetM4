@@ -21,5 +21,6 @@ namespace Modelo.ComponentesClinica
         [ForeignKey("Clinica")]
         public long? ClinicaID { get; set; }
         public Clinica Clinica { get; set; }
+        public Agendamento Agendamento { get; set; }
     }
 }

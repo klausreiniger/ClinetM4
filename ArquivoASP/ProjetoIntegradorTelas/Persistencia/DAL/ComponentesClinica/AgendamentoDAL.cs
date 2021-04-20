@@ -25,10 +25,6 @@ namespace Persistencia.DAL.ComponentesClinica
         public IQueryable<Agendamento> ObterAgendamentosPorPaciente(long id) {
             return context.Agendamentos.Where(a => a.PacienteID == id);
         }
-        public IEnumerable<Agendamento> DisplayAgendamentosPorHorarioConsulta()
-        {
-            return context.Agendamentos.OrderBy(c => c.horario_consulta);
-        }
         public Agendamento ObterAgendamentoPorID(long id)
         {
             return context.Agendamentos.Where(c => c.AgendamentoID == id).First();

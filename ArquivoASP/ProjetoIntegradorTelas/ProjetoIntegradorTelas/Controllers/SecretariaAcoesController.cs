@@ -18,7 +18,8 @@ namespace ProjetoIntegradorTelas.Controllers
         private SecretariaServico secretariaServico = new SecretariaServico();
         // GET: SecretariaAcoes
         public ActionResult SecretariaCadastro() {
-            ViewBag.ClinicaID = new SelectList(clinicaServico.DisplayClinicasPorNome(), "ClinicaID", "nome");
+            Secretaria secretaria = new Secretaria();
+            ViewBag.ClinicaID = new SelectList(clinicaServico.DisplayClinicasPorNome(), "ClinicaID", "nome", secretaria.ClinicaID);
             return View();
         }
         [HttpPost]

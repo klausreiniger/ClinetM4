@@ -13,20 +13,20 @@ namespace Modelo.ComponentesClinica
     public class Agendamento
     {
         [Key]
-        public long? AgendamentoID;
+        public long? AgendamentoID { get; set; }
         [ForeignKey("Paciente")]
-        public long? PacienteID;
-        public Paciente paciente;
+        public long? PacienteID { get; set; }
+        public Paciente Paciente { get; set; }
         [ForeignKey("Clinica")]
-        public long? ClinicaID;
-        public Clinica clinica;
+        public long? ClinicaID { get; set; }
+        public Clinica Clinica { get; set; }
         [ForeignKey("Medico")]
-        public long? MedicoID;
-        public Medico medico;
-        [Required]
-        public DateTime horario_consulta;
-        public DateTime horario_agendamento;
-        public bool confirmada;
-        public bool finalizada;
+        public long? MedicoID { get; set; }
+        public Medico Medico { get; set; }
+        [ForeignKey("HorarioDisponivel")]
+        public HorarioDisponivel HorarioDisponivelID {get;set;}
+        public HorarioDisponivel HorarioDisponivel{get;set;}
+        public bool confirmada { get; set; }
+        public bool finalizada { get; set; }
     }
 }

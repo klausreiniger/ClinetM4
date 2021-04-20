@@ -20,5 +20,6 @@ namespace Modelo.Usuarios
         public string username { get; set; }
         public string password { get; set; }
         public virtual ICollection<HorarioDisponivel> HorariosDisponiveis { get; set; }
+        public virtual ICollection<Agendamento> Agendamentos { get; set; }
     }
 }

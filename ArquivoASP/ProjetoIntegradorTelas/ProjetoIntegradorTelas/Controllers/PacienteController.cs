@@ -15,6 +15,8 @@ namespace ProjetoIntegradorTelas.Controllers
         private PacienteServico pacienteServico = new PacienteServico();
         private ClinicaServico clinicaServico = new ClinicaServico();
         private AgendamentoServico agendamentoServico = new AgendamentoServico();
+        private HorarioDisponivelServico horarioDisponivelServico = new HorarioDisponivelServico();
+        private MedicoServico medicoServico = new MedicoServico();
         // GET: PacienteLoginCadastro
         public ActionResult LoginCadastroPaciente()
         {
@@ -81,7 +83,7 @@ namespace ProjetoIntegradorTelas.Controllers
 
         public ActionResult PacienteMarcacao(string  username)
         {
-            TempData["paciente_user"] = username;
+            TempData["paciente_username"] = username;
             TempData.Keep();
             IEnumerable<Clinica> clinicas = clinicaServico.DisplayClinicasPorNome();
             return View(clinicas);
@@ -94,8 +96,9 @@ namespace ProjetoIntegradorTelas.Controllers
             agendamento.ClinicaID = clinica.ClinicaID;
             agendamento.confirmada = false;
             agendamento.finalizada = false;
-            TempData["horarios"]
-            return RedirectToAction("Index", "Navegacao");
+            ViewBag.HorarioDisponivelID = new SelectList(horarioDisponivelServico.ObterHorariosPorClinica((long)clinicaID), "HorarioDisponivelID", "horario", agendamento.HorarioDisponivelID);
+            TempData["paciente_username"] = username;
+            return View(agendamento);
         }
         public ActionResult PacienteHistoricoConsultas(string username)
         {

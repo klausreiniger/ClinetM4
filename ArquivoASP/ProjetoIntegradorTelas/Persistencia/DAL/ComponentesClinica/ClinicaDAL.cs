@@ -15,7 +15,7 @@ namespace Persistencia.DAL.ComponentesClinica
         public IEnumerable<Clinica> DisplayClinicas() {
             return context.Clinicas.ToList();
         }
-        public IEnumerable<Clinica> DisplayClinicasPorNome() {
+        public IQueryable<Clinica> DisplayClinicasPorNome() {
             return context.Clinicas.OrderBy(c => c.nome);
         }
         public Clinica ObterClinicaPorID(long id)
